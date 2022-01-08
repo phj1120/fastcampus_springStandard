@@ -19,7 +19,6 @@ public class TwoDice {
 		int number1 = (int)(Math.random()*6) +1;
 		int number2 = (int)(Math.random()*6) +1;
 		
-		
 		out.println("<html>");
 		out.println("<head>");
 		out.println("</head>");
