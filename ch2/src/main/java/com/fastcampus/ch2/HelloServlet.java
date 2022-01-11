@@ -8,7 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/hello")
+//Hello.java 에 @RequestMapping("/hello")가 이미 있어서 변경
+@WebServlet("/helloServlet")
 public class HelloServlet extends HttpServlet {
 	
 //	서블릿이 초기화 될 때 자동으로 호출되는 메서드

@@ -30,6 +30,12 @@ public class MyDispatcherServlet extends HttpServlet {
 		Model  model = null;
 		String viewName = "";
 		
+		System.out.println(map);
+        for( Object key : map.keySet() ){
+            System.out.println( String.format("키 : %s, 값 : %s", key, map.get(key)) );
+        }
+
+		
 		try {
 			Class clazz = Class.forName("com.fastcampus.ch2.YoilTellerMVC");
 			Object obj = clazz.newInstance();
@@ -116,6 +122,7 @@ public class MyDispatcherServlet extends HttpServlet {
 		}
 		
 		// 5.렌더링 결과를 출력한다.
+		System.out.println(result);
 		out.println(result);
 	}
 }
