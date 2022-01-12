@@ -4,16 +4,21 @@ import java.util.Calendar;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 //년월일 입력하면 요일 알려주는 프로그램
 @Controller
-public class YoilTellerMVC {
+public class YoilTellerMVC2 {
 
+	@ExceptionHandler
+	public String cathcer(Exception ex) {
+		ex.printStackTrace();
+		return "yoilError";
+	}
 	
-	
-	@RequestMapping("/getYoilMVC") //http://localhost:8080/ch2/getYoilMVC?year=2021&month=1&day=7
+	@RequestMapping("/getYoilMVC2") //http://localhost:8080/ch2/getYoilMVC2?year=2021&month=1&day=7
 	public String main(@RequestParam(required=true) int year, 
 			@RequestParam(required=true) int month, 
 			@RequestParam(required=true) int day, Model model) throws Exception {	
