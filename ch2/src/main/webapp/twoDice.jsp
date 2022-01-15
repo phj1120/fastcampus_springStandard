@@ -16,7 +16,7 @@
 	<title>twoDice.jsp</title>
 </head>
 <body>
-	<img src='resources/img/dice<%=idx1%>.jpg'>
-	<img src='resources/img/dice<%=idx2%>.jpg'>
+	<img src='img/dice<%=idx1%>.jpg'>
+	<img src='img/dice<%=idx2%>.jpg'>
 </body>
 </html>
