@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- <beans:beans xmlns:mvc="http://www.springframework.org/schema/mvc" mvc 가 생략 된거임 
+하나는 생략할 수 있어서 이거 생략한거-->
 <beans:beans xmlns="http://www.springframework.org/schema/mvc"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
@@ -20,6 +22,8 @@
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
+	
+	<view-controller path="/register/add" view-name="registerForm"></view-controller>
 	
 	<context:component-scan base-package="com.fastcampus.ch2" />
 	

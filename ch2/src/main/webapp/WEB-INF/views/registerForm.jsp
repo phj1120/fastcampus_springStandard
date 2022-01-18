@@ -70,7 +70,8 @@
     <title>Register</title>
 </head>
 <body>
-   <form action="<c:url value="/register/save"/>" method="post" onsubmit="return formCheck(this)">
+   <!-- <form action="/ch2/register/save" method="POST" onsubmit="return formCheck(this)"> -->
+   <form action="<c:url value="/register/save"/>" method="POST" onsubmit="return formCheck(this)">
     <div class="title">Register</div>
     <div id="msg" class="msg">
    	    <c:if test="${not empty param.msg}">

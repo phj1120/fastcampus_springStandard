@@ -3,10 +3,8 @@ package com.fastcampus.ch2;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.lang.reflect.Array;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
@@ -118,6 +116,7 @@ public class MyDispatcherServlet extends HttpServlet {
 			String key = (String)it.next();
 
 			// 4. replace()로 key를 value 치환한다.
+			result = result.replace("${myDate."+key+"}", map.get(key)+"");
 			result = result.replace("${"+key+"}", map.get(key)+"");
 		}
 		

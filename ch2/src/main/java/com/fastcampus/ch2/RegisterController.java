@@ -1,21 +1,36 @@
 package com.fastcampus.ch2;
 
+import java.net.URLEncoder;
+
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class RegisterController {
 	
 //	@RequestMapping("/register/add")
-	@GetMapping("/register/add")
-	public String register() {
-		return "registerForm";
-	}
+//	@GetMapping("/register/add")
+//	public String register() {
+//		return "registerForm";
+//	}
 	
 //	@RequestMapping(value = "/register/save", method= {RequestMethod.GET, RequestMethod.POST})
-	@PostMapping("/register/save") // spring 4.3 ë¶€í„°,
-	public String save() {
+	@PostMapping("/register/save") // spring 4.3 ºÎÅÍ Àû¿ë °¡´É,
+	public String save(User user, Model m) throws Exception {
+//		1. À¯È¿¼º °Ë»ç
+		if(!isValid(user)) {
+			String msg = URLEncoder.encode("id¸¦ Àß ¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.", "utf-8");
+			return "redirect:/register/add?msg="+msg; // urlÀçÀÛ¼º(Rewriting)
+		}
+		
+		
+//		2. DB¿¡ ½Å±Ô È¸¿ø Á¤º¸¸¦ ÀúÀå
 		return "registerInfo";
+	}
+
+	private boolean isValid(User user) {
+		return true;
 	}
 }
