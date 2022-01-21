@@ -29,7 +29,9 @@
 	</logger>
 
 	<logger name="org.springframework.web">
-		<level value="trace" />
+		<!-- 상세하게 보고 싶을 경우 -->
+		<!-- <level value="trace" /> -->
+		<level value="info" />
 	</logger>
 
 	<!-- Root Logger -->
