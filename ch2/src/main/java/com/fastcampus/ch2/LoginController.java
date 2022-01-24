@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,9 +34,10 @@ public class LoginController {
 		return "redirect:/";
 	}
 	
-	
 	@PostMapping("/login")
-	public String login(String id, String pwd, boolean rememberId, HttpServletResponse response, HttpServletRequest request) throws UnsupportedEncodingException {
+	public String login(@CookieValue("id") String cookieId, @CookieValue("JSESSIONID") String sessionId,
+			String toURL, String id, String pwd, 
+			boolean rememberId, HttpServletResponse response, HttpServletRequest request) throws UnsupportedEncodingException {
 //		rememberId 가
 //		boolean 일 경우 : true / false
 //		String 일 경우  : on / null
@@ -55,9 +57,8 @@ public class LoginController {
 		HttpSession session = request.getSession();
 //		2. 세션 객체에 id 저장
 		session.setAttribute("id", id);
-		
 		if(rememberId) {
-			System.out.println("쿠키 생성");
+//			System.out.println("쿠키 생성");
 //			쿠키 속성이 다르면 삭제가 안되네
 //			cookie.setValue(id);
 //			cookie.setDomain("localhost");
@@ -65,15 +66,16 @@ public class LoginController {
 			cookie.setMaxAge(60*60*24);
 		} else {
 //			2. 쿠키 삭제
-			System.out.println("쿠키 삭제");
+//			System.out.println("쿠키 삭제");
 			cookie.setMaxAge(0); 
 		}
 		
 //		3. 쿠키 응답에 저장
 		response.addCookie(cookie);
-
 //		3. 홈으로 이동
-		return "redirect:/";
+		
+		toURL = ("".equals(toURL)||toURL == null)? "/": toURL;
+		return "redirect:"+toURL;
 	}
 
 	private boolean loginCheck(String id, String pwd) {
