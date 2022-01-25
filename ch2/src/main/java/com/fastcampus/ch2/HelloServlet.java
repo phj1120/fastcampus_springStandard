@@ -27,7 +27,7 @@ public class HelloServlet extends HttpServlet {
 //		3. 출력		
 		System.out.println("HelloServlet service() is called");
 	}
-	
+
 //	서블릿이 내려올 때
 //	리로드, 종료
 //	3. 뒷정리 - 서블릿이 메모리에서 제거 될 때 서블릿 컨테이너에 의해서 자동 호출
