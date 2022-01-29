@@ -20,6 +20,7 @@
 	    <li><a href="<c:url value='/register/add'/>">Sign in</a></li>
 	    <li><a href=""><i class="fas fa-search small"></i></a></li>
 	</ul> 
+<p>session id : ${sessionScope.id }</p>
 </div><div style="text-align:center">
 	<h1>This is BOARD</h1>
 	<h1>This is BOARD</h1>

@@ -35,12 +35,20 @@ public class LoginController {
 	}
 	
 	@PostMapping("/login")
-	public String login(@CookieValue("id") String cookieId, @CookieValue("JSESSIONID") String sessionId,
+	public String login(
+//			@CookieValue("id") String cookieId, 
+//			@CookieValue("JSESSIONID") String sessionId,
 			String toURL, String id, String pwd, 
 			boolean rememberId, HttpServletResponse response, HttpServletRequest request) throws UnsupportedEncodingException {
 //		rememberId 가
 //		boolean 일 경우 : true / false
 //		String 일 경우  : on / null
+		
+//		String[] strArr = new String[2];
+//		strArr[0] = "abc";
+//		strArr[1] = "def";
+//		
+//		System.out.println(strArr);
 		
 //		1. id, pwd 확인
 		if(!loginCheck(id, pwd)) {
@@ -57,6 +65,9 @@ public class LoginController {
 		HttpSession session = request.getSession();
 //		2. 세션 객체에 id 저장
 		session.setAttribute("id", id);
+		
+		System.out.println("[session id] : "+session.getAttribute("id"));
+		
 		if(rememberId) {
 //			System.out.println("쿠키 생성");
 //			쿠키 속성이 다르면 삭제가 안되네
@@ -75,6 +86,7 @@ public class LoginController {
 //		3. 홈으로 이동
 		
 		toURL = ("".equals(toURL)||toURL == null)? "/": toURL;
+		System.out.println(toURL);
 		return "redirect:"+toURL;
 	}
 

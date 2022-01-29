@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class YoilTellerMVC {
 
 	
-	
+//	String 반환
 	@RequestMapping("/getYoilMVC") //http://localhost:8080/ch2/getYoilMVC?year=2021&month=1&day=7
 	public String main(@RequestParam(required=true) int year, 
 			@RequestParam(required=true) int month, 
@@ -39,6 +39,34 @@ public class YoilTellerMVC {
 //		3. View 호출
 		return "yoil"; //WEB-INF/views/yoil.jsp
 	}
+//	ModelAndView 반환
+//	@RequestMapping("/getYoilMVC") //http://localhost:8080/ch2/getYoilMVC?year=2021&month=1&day=7
+//	public ModelAndView main(int year, int month, int day) throws Exception {	
+////		1. 유효성 검사
+////		if(!isValid(year, month, day))
+////			return "yoilError";
+////		
+//		ModelAndView mv = new ModelAndView();
+//		
+////		2. 요일 계산
+//		char yoil = getYoil(year, month, day);
+//		
+////		3. Model에 값 저장
+//		mv.addObject("year", year);
+//		mv.addObject("month", month);
+//		mv.addObject("day", day);
+//		mv.addObject("yoil", yoil);
+//		
+//		System.out.println(year);
+//		System.out.println(month);
+//		System.out.println(day);
+//		System.out.println(yoil);
+//		
+//		mv.setViewName("yoil");	
+//		
+////		3. View 호출
+//		return mv; //WEB-INF/views/yoil.jsp
+//	}
 
 	private boolean isValid(int year, int month, int day) {
 		return true;
@@ -53,4 +81,6 @@ public class YoilTellerMVC {
 		System.out.println(yoil);
 		return yoil;
 	}
+
+	
 }
