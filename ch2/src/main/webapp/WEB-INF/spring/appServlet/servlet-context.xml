@@ -10,10 +10,10 @@
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
-	
 	<!-- Enables the Spring MVC @Controller programming model -->
-	<annotation-driven />
-
+	<!-- <annotation-driven /> -->
+	
+	
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/**" location="/resources/" />
 
@@ -22,11 +22,15 @@
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
-	
-	<!-- <view-controller path="/register/add" view-name="registerForm"></view-controller> -->
-	
+
 	<context:component-scan base-package="com.fastcampus.ch2" />
 	
+	
+	<!-- 단순히 view 이름만 리턴하는 컨트롤러 등록 -->
+	<!-- <view-controller path="/register/add" view-name="registerForm"></view-controller> -->
+
+	
+	<!-- 오류에 따른 예외 처리  ===================================================================================== -->
  	<beans:bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
 		<beans:property name="defaultErrorView" value="error"/>
     		<beans:property name="exceptionMappings">
@@ -40,6 +44,17 @@
 			</beans:props>
 		</beans:property>
   	</beans:bean>
+	<!-- =============================================================================================================== -->
 	
+	<!-- 데이터 변환과 검증 Validator ================================================================================== -->
+	<beans:bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<beans:property name="basenames">
+			<beans:value>error_message</beans:value> <!-- /src/main/resources/error_message.properties -->		
+		</beans:property>
+	</beans:bean>
+	
+	<annotation-driven validator="golbalValidator"/>
+	<beans:bean id="golbalValidator" class="com.fastcampus.ch2.GlobalValidator"></beans:bean>
+	<!-- =============================================================================================================== -->
 	
 </beans:beans>

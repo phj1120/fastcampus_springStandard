@@ -32,11 +32,11 @@ public class ExceptionController {
 	@RequestMapping("/ex")
 	public String main(Model m) throws Exception{
 		m.addAttribute("msg", "message from ExceptionController.main()");
-		throw new Exception("¿¡¿Ü°¡ ¹ß»ıÇß½À´Ï´Ù.");
+		throw new Exception("ì˜ˆì™¸ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤.");
 	}
 
 	@RequestMapping("/ex2")
 	public String main2() throws Exception{
-		throw new NullPointerException("¿¡¿Ü°¡ ¹ß»ıÇß½À´Ï´Ù.");
+		throw new NullPointerException("ì˜ˆì™¸ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤.");
 	}
 }

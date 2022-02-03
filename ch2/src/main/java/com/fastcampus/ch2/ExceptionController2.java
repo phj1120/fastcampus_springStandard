@@ -20,11 +20,11 @@ public class ExceptionController2 {
 	
 	@RequestMapping("/ex3")
 	public String main() throws Exception{
-		throw new MyException("¿¡¿Ü°¡ ¹ß»ıÇß½À´Ï´Ù.");
+		throw new MyException("ì˜ˆì™¸ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤.");
 	}
 
 	@RequestMapping("/ex4")
 	public String main2() throws Exception{
-		throw new NullPointerException("¿¡¿Ü°¡ ¹ß»ıÇß½À´Ï´Ù.");
+		throw new NullPointerException("ì˜ˆì™¸ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤.");
 	}
 }
