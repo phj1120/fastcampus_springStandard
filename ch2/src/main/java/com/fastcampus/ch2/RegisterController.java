@@ -54,6 +54,11 @@ public class RegisterController {
 		return "registerForm";
 	}
 	
+	@PostMapping("/register/add")
+	public String registerSave() {
+		return "forward:/register/save";
+	}
+	
 //	@RequestMapping(value = "/register/save", method= {RequestMethod.GET, RequestMethod.POST})
 	@PostMapping("/register/save") // spring 4.3 부터 적용 가능,
 	public String save(@Valid User user, BindingResult result, Model m) throws Exception {

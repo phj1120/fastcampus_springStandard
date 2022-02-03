@@ -51,6 +51,7 @@
 		<beans:property name="basenames">
 			<beans:value>error_message</beans:value> <!-- /src/main/resources/error_message.properties -->		
 		</beans:property>
+		<beans:property name="defaultEncoding" value="UTF-8"></beans:property>
 	</beans:bean>
 	
 	<annotation-driven validator="golbalValidator"/>

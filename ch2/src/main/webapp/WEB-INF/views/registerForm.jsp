@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=utf-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import="java.net.URLDecoder"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ page import="java.net.URLDecoder"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -71,9 +71,10 @@
     <title>Register</title>
 </head>
 <body>
-<%-- <form action="/ch2/register/save" method="POST" onsubmit="return formCheck(this)"> --%>
-<%-- <form action="<c:url value="/register/save"/>" method="POST" onsubmit="return formCheck(this)"> --%>
+	<%-- <form action="/ch2/register/save" method="POST" onsubmit="return formCheck(this)"> --%>
+	<%-- <form action="<c:url value="/register/save"/>" method="POST" onsubmit="return formCheck(this)"> --%>
 	<form:form modelAttribute="user">
+	<%-- <form:form modelAttribute="user" action="save"> --%>
 		<div class="title">Register</div>
 		<div id="msg" class="msg">
 		    <%-- <c:if test="${not empty param.msg}">
