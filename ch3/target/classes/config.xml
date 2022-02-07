@@ -1,33 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <!-- scope 기본이 singleton-->
     <!--<bean id = "car" class="com.fastcampus.ch3.Car"/>-->
-    <bean id = "car" class="com.fastcampus.ch3.Car" scope="prototype">
-        <!-- setter 이용해 선언 -->
-        <property name="color" value="blue"/>
-        <property name="oil" value="50"/>
-        <property name="engine" ref="engine"/>
-        <property name="doors">
-            <array value-type="com.fastcampus.ch3.Door">
-                <ref bean="door"/>
-                <ref bean="door"/>
-            </array>
-        </property>
+    <!--    <bean id = "car" class="com.fastcampus.ch3.Car" scope="prototype">-->
+    <!--        setter 이용해 선언 -->
+    <!--        <property name="color" value="blue"/>-->
+    <!--        <property name="oil" value="50"/>-->
+    <!--        <property name="engine" ref="engine"/>-->
+    <!--        <property name="doors">-->
+    <!--            <array value-type="com.fastcampus.ch3.Door">-->
+    <!--                <ref bean="door"/>-->
+    <!--                <ref bean="door"/>-->
+    <!--            </array>-->
+    <!--        </property>-->
 
-        <!-- 생성자로 선언 가능-->
-<!--        <constructo&lt;!&ndash;r-arg name="color" value="blue"/>-->
-<!--        <constructor-arg name="oil" value="50"/>-->
-<!--        <constructor-arg name="engine" ref="engine"/>-->
-<!--        <constructor-arg name="doors">-->
-<!--            <array value-type="com.fastcampus.ch3.Door">-->
-<!--                <ref bean="door"/>-->
-<!--                <ref bean="door"/>-->
-<!--            </array>-->
-<!--        </construct&ndash;&gt;or-arg>-->
+    <!-- 생성자로 선언 가능 기본적으로는 property 태그 이용 -->
+    <!--        <constructo&lt;!&ndash;r-arg name="color" value="blue"/>-->
+    <!--        <constructor-arg name="oil" value="50"/>-->
+    <!--        <constructor-arg name="engine" ref="engine"/>-->
+    <!--        <constructor-arg name="doors">-->
+    <!--            <array value-type="com.fastcampus.ch3.Door">-->
+    <!--                <ref bean="door"/>-->
+    <!--                <ref bean="door"/>-->
+    <!--            </array>-->
+    <!--        </construct&ndash;&gt;or-arg>-->
 
-    </bean>
-    <bean id = "engine" class="com.fastcampus.ch3.Engine"/>
-    <bean id = "door" class="com.fastcampus.ch3.Door" scope="prototype"/>
+    <!--    </bean>-->
+    <!--    <bean id = "engine" class="com.fastcampus.ch3.Engine"/>-->
+    <!--    <bean id = "door" class="com.fastcampus.ch3.Door" scope="prototype"/>-->
+
+    <!--    하위 패키지에도 같은 이름의 클래스가 있어서 오류 발생-->
+    <!--    com.fastcampus.ch3.diCopy3.Car, com.fastcampus.ch3.Car-->
+    <!--    <context:component-scan base-package="com.fastcampus.ch3"/>-->
+    <context:component-scan base-package="com.fastcampus.ch3">
+        <context:exclude-filter type="regex" expression="com.fastcampus.ch3.diCopy*.*"/>
+    </context:component-scan>
 </beans>
