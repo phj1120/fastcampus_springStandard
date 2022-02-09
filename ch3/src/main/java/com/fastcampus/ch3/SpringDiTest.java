@@ -17,7 +17,7 @@ import javax.annotation.Resource;
 @Setter
 @ToString
 @AllArgsConstructor
-@NoArgsConstructor // 기본 생성자 꼭 만들어 주자
+//@NoArgsConstructor // 기본 생성자 꼭 만들어 주자
 @Component
 class Car {
     @Value("red") String color;
@@ -56,7 +56,7 @@ public class SpringDiTest {
 //        car.setEngine(engine);
 //        car.setDoors(new Door[]{ ac.getBean(Door.class), ac.getBean(Door.class) });
 //        setter 대신 @Autowired, @Value 이용
-        
+
         System.out.println("car = " + car);
 //        System.out.println("engine = " + engine);
     }
