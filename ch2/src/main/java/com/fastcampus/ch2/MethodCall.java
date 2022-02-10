@@ -23,30 +23,30 @@ public class MethodCall {
 	static void render(HashMap map, String viewName) throws IOException {
 		String result = "";
 		
-		// 1. ºäÀÇ ³»¿ëÀ» ÇÑÁÙ¾¿ ÀĞ¾î¼­ ÇÏ³ªÀÇ ¹®ÀÚ¿­·Î ¸¸µç´Ù.
+		// 1. ë·°ì˜ ë‚´ìš©ì„ í•œì¤„ì”© ì½ì–´ì„œ í•˜ë‚˜ì˜ ë¬¸ìì—´ë¡œ ë§Œë“ ë‹¤.
 		Scanner sc = new Scanner(new File(viewName+".txt"));
 		
 		while(sc.hasNextLine())
 			result += sc.nextLine()+ System.lineSeparator();
 		
-		// 2. map¿¡ ´ã±ä key¸¦ ÇÏ³ª¾¿ ÀĞ¾î¼­ templateÀÇ ${key}¸¦ value¹Ù²Û´Ù.
+		// 2. mapì— ë‹´ê¸´ keyë¥¼ í•˜ë‚˜ì”© ì½ì–´ì„œ templateì˜ ${key}ë¥¼ valueë°”ê¾¼ë‹¤.
 		Iterator it = map.keySet().iterator();
 		
 		while(it.hasNext()) {
 			String key = (String)it.next();
 
-			// 3. replace()·Î key¸¦ value Ä¡È¯ÇÑ´Ù.
+			// 3. replace()ë¡œ keyë¥¼ value ì¹˜í™˜í•œë‹¤.
 			result = result.replace("${"+key+"}", (String)map.get(key));
 		}
 		
-		// 4.·»´õ¸µ °á°ú¸¦ Ãâ·ÂÇÑ´Ù.
+		// 4.ë Œë”ë§ ê²°ê³¼ë¥¼ ì¶œë ¥í•œë‹¤.
 		System.out.println(result);
 	}
 }
 
 class ModelController {
 	public String main(HashMap map) {
-//		ÀÛ¾÷ °á°ú¸¦ ¸Ê¿¡ ÀúÀå
+//		ì‘ì—… ê²°ê³¼ë¥¼ ë§µì— ì €ì¥
 		map.put("id", "asdf");
 		map.put("pwd", "1111");
 		

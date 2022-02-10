@@ -2,56 +2,57 @@ package com.fastcampus.ch2;
 
 import java.util.Calendar;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-//³â¿ùÀÏ ÀÔ·ÂÇÏ¸é ¿äÀÏ ¾Ë·ÁÁÖ´Â ÇÁ·Î±×·¥
+//ë…„ì›”ì¼ ì…ë ¥í•˜ë©´ ìš”ì¼ ì•Œë ¤ì£¼ëŠ” í”„ë¡œê·¸ë¨
 @Controller
 public class YoilTellerMVC {
-
 	
-//	String ¹İÈ¯
+//	String ë°˜í™˜ 
+//	ì–´ë–¤ viewë¥¼ ì´ìš©í•´ ê²°ê³¼ë¥¼ ë³´ì—¬ì¤„ì§€
+//  view ì˜ ì´ë¦„ì„ ë””ìŠ¤íŒ¨ì³ì„œë¸”ë¦¿ì— ë°˜í™˜
+//	ëª¨ë¸ì€ ë””ìŠ¤íŒ¨ì³ ì„œë¸”ë¦¿ì—ì„œ ìƒì„±ëœ ê²ƒìœ¼ë¡œ ë”°ë¡œ ë°˜í™˜í•´ì¤„ í•„ìš” ì—†ìŒ
 	@RequestMapping("/getYoilMVC") //http://localhost:8080/ch2/getYoilMVC?year=2021&month=1&day=7
-	public String main(@RequestParam(required=true) int year, 
-			@RequestParam(required=true) int month, 
-			@RequestParam(required=true) int day, Model model) throws Exception {	
-
-//		1. À¯È¿¼º °Ë»ç
+//	public String main(@RequestParam(required=true) int year, 
+//			@RequestParam(required=true) int month, 
+//			@RequestParam(required=true) int day, Model model) throws Exception {	
+	public String main(int year, int month, int day, Model model) throws Exception{
+//		1. ìœ íš¨ì„± ê²€ì‚¬
 		if(!isValid(year, month, day))
 			return "yoilError";
 		
-//		2. ¿äÀÏ °è»ê
+//		2. ìš”ì¼ ê³„ì‚°
 		char yoil = getYoil(year, month, day);
 		
-//		3. Model¿¡ °ª ÀúÀå
+//		3. Modelì— ê°’ ì €ì¥ 
+//		Controller ê°€ ì‘ì—…í•œ ê²°ê³¼ë¥¼ DispacherServletì„ í†µí•´ view ì—ê²Œ ë„˜ê²¨ì£¼ê¸° ìœ„í•´
 		model.addAttribute("year", year);
 		model.addAttribute("month", month);
 		model.addAttribute("day", day);
 		model.addAttribute("yoil", yoil);
 		
-		System.out.println(year);
-		System.out.println(month);
-		System.out.println(day);
-		System.out.println(yoil);
-		
-//		3. View È£Ãâ
+//		3. View í˜¸ì¶œ
 		return "yoil"; //WEB-INF/views/yoil.jsp
 	}
-//	ModelAndView ¹İÈ¯
+	
+//	ModelAndView ë°˜í™˜
 //	@RequestMapping("/getYoilMVC") //http://localhost:8080/ch2/getYoilMVC?year=2021&month=1&day=7
 //	public ModelAndView main(int year, int month, int day) throws Exception {	
-////		1. À¯È¿¼º °Ë»ç
+////		1. ìœ íš¨ì„± ê²€ì‚¬
 ////		if(!isValid(year, month, day))
 ////			return "yoilError";
 ////		
 //		ModelAndView mv = new ModelAndView();
 //		
-////		2. ¿äÀÏ °è»ê
+////		2. ìš”ì¼ ê³„ì‚°
 //		char yoil = getYoil(year, month, day);
 //		
-////		3. Model¿¡ °ª ÀúÀå
+////		3. Modelì— ê°’ ì €ì¥
 //		mv.addObject("year", year);
 //		mv.addObject("month", month);
 //		mv.addObject("day", day);
@@ -64,7 +65,7 @@ public class YoilTellerMVC {
 //		
 //		mv.setViewName("yoil");	
 //		
-////		3. View È£Ãâ
+////		3. View í˜¸ì¶œ
 //		return mv; //WEB-INF/views/yoil.jsp
 //	}
 
@@ -77,8 +78,8 @@ public class YoilTellerMVC {
 		cal.set(year, month-1, day);
 		
 		int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
-		char yoil = " ÀÏ¿ùÈ­¼ö¸ñ±İÅä".charAt(dayOfWeek);
-		System.out.println(yoil);
+		char yoil = " ì¼ì›”í™”ìˆ˜ëª©ê¸ˆí† ".charAt(dayOfWeek);
+//		System.out.println(yoil);
 		return yoil;
 	}
 

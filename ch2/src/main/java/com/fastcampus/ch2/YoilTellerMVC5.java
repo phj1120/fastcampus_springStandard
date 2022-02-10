@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-//³â¿ùÀÏ ÀÔ·ÂÇÏ¸é ¿äÀÏ ¾Ë·ÁÁÖ´Â ÇÁ·Î±×·¥
+//ë…„ì›”ì¼ ì…ë ¥í•˜ë©´ ìš”ì¼ ì•Œë ¤ì£¼ëŠ” í”„ë¡œê·¸ë¨
 @Controller
 public class YoilTellerMVC5 {
 
@@ -20,21 +20,21 @@ public class YoilTellerMVC5 {
 	
 	@RequestMapping("/getYoilMVC5") //http://localhost:8080/ch2/getYoilMVC5?year=2021&month=1&day=7
 //	public String main(@ModelAttribute("myDate") MyDate date, Model model) throws Exception {	
-//	public String main(@ModelAttribute MyDate date, Model model) throws Exception {	// key »ı·« °¡´É
-	public String main(MyDate date, Model model) throws Exception {	// @ModelAttribute »ı·« °¡´É
+//	public String main(@ModelAttribute MyDate date, Model model) throws Exception {	// key ìƒëµ ê°€ëŠ¥
+	public String main(MyDate date, Model model) throws Exception {	// @ModelAttribute ìƒëµ ê°€ëŠ¥
 		
-//		1. À¯È¿¼º °Ë»ç
+//		1. ìœ íš¨ì„± ê²€ì‚¬
 		if(!isValid(date))
 			return "yoilError";
 		
-//		2. ¿äÀÏ °è»ê
+//		2. ìš”ì¼ ê³„ì‚°
 //		char yoil = getYoil(date);
 		
-//		3. Model¿¡ °ª ÀúÀå
+//		3. Modelì— ê°’ ì €ì¥
 //		model.addAttribute("mtDate", date);
 //		model.addAttribute("yoil", yoil);
 				
-//		4. View È£Ãâ
+//		4. View í˜¸ì¶œ
 		return "yoil"; //WEB-INF/views/yoil.jsp
 	}
 
@@ -58,7 +58,7 @@ public class YoilTellerMVC5 {
 		cal.set(year, month-1, day);
 		
 		int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
-		char yoil = " ÀÏ¿ùÈ­¼ö¸ñ±İÅä".charAt(dayOfWeek);
+		char yoil = " ì¼ì›”í™”ìˆ˜ëª©ê¸ˆí† ".charAt(dayOfWeek);
 		System.out.println(yoil);
 		return yoil;
 	}

@@ -18,9 +18,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.support.BindingAwareModelMap;
 
 
-// ½ºÇÁ¸µ¿¡¼­ @Controller + @RequestMapping
-// ¼­ºí¸´¿¡¼­´Â Å¬·¡½º ´ÜÀ§·Î ¸ÅÇÎÀÌ µÅ Å¬·¡½º¸¦ ´õ ¸¹ÀÌ ¸¸µé¾î¾ßÇÔ
-@WebServlet("/myDispatcherServlet")  // http://localhost/ch2/myDispatcherServlet?year=2021&month=10&day=1
+// ìŠ¤í”„ë§ì—ì„œ @Controller + @RequestMapping
+// ì„œë¸”ë¦¿ì—ì„œëŠ” í´ë˜ìŠ¤ ë‹¨ìœ„ë¡œ ë§¤í•‘ì´ ë¼ í´ë˜ìŠ¤ë¥¼ ë” ë§ì´ ë§Œë“¤ì–´ì•¼í•¨
+@WebServlet("/myDispatcherServlet")  // http://localhost:8080/ch2/myDispatcherServlet?year=2021&month=10&day=1
 public class MyDispatcherServlet extends HttpServlet {
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -30,7 +30,7 @@ public class MyDispatcherServlet extends HttpServlet {
 		
 		System.out.println(map);
         for( Object key : map.keySet() ){
-            System.out.println( String.format("Å° : %s, °ª : %s", key, map.get(key)) );
+            System.out.println( String.format("í‚¤ : %s, ê°’ : %s", key, map.get(key)) );
         }
 
 		
@@ -38,10 +38,10 @@ public class MyDispatcherServlet extends HttpServlet {
 			Class clazz = Class.forName("com.fastcampus.ch2.YoilTellerMVC");
 			Object obj = clazz.newInstance();
 			
-      			// 1. main¸Ş¼­µåÀÇ Á¤º¸¸¦ ¾ò´Â´Ù.
+      			// 1. mainë©”ì„œë“œì˜ ì •ë³´ë¥¼ ì–»ëŠ”ë‹¤.
 			Method main = clazz.getDeclaredMethod("main", int.class, int.class, int.class, Model.class);
 			
-      			// 2. main¸Ş¼­µåÀÇ ¸Å°³º¯¼ö ¸ñ·Ï(paramArr)À» ÀĞ¾î¼­ ¸Ş¼­µå È£Ãâ¿¡ »ç¿ëÇÒ ÀÎÀÚ ¸ñ·Ï(argArr)À» ¸¸µç´Ù.
+      			// 2. mainë©”ì„œë“œì˜ ë§¤ê°œë³€ìˆ˜ ëª©ë¡(paramArr)ì„ ì½ì–´ì„œ ë©”ì„œë“œ í˜¸ì¶œì— ì‚¬ìš©í•  ì¸ì ëª©ë¡(argArr)ì„ ë§Œë“ ë‹¤.
 			Parameter[] paramArr = main.getParameters();
 			Object[] argArr = new Object[main.getParameterCount()];
 
@@ -50,36 +50,38 @@ public class MyDispatcherServlet extends HttpServlet {
 				Class  paramType = paramArr[i].getType();
 				Object value = map.get(paramName);
 
-				// paramTypeÁß¿¡ ModelÀÌ ÀÖÀ¸¸é, »ı¼º & ÀúÀå 
+				// paramTypeì¤‘ì— Modelì´ ìˆìœ¼ë©´, ìƒì„± & ì €ì¥ 
 				if(paramType==Model.class) {
 					argArr[i] = model = new BindingAwareModelMap();
 				} else if(paramType==HttpServletRequest.class) {
 					argArr[i] = request;
 				} else if(paramType==HttpServletResponse.class) {
 					argArr[i] = response;					
-				} else if(value != null) {  // map¿¡ paramNameÀÌ ÀÖÀ¸¸é,
-					// value¿Í parameterÀÇ Å¸ÀÔÀ» ºñ±³ÇØ¼­, ´Ù¸£¸é º¯È¯ÇØ¼­ ÀúÀå 
-//					year year ÀÌ·¸°Ô ¿©·¯°³ µé¾î¿Ã °ÍÀ» ´ëºñÇØ value ´Â ¹è¿­·Î µÇ¾îÀÖÀ½
-					String strValue = ((String[])value)[0];	// getParameterMap()¿¡¼­ ²¨³½ value´Â String¹è¿­ÀÌ¹Ç·Î º¯È¯ ÇÊ¿ä 
+				} else if(value != null) {  // mapì— paramNameì´ ìˆìœ¼ë©´,
+					// valueì™€ parameterì˜ íƒ€ì…ì„ ë¹„êµí•´ì„œ, ë‹¤ë¥´ë©´ ë³€í™˜í•´ì„œ ì €ì¥ 
+//					year year ì´ë ‡ê²Œ ì—¬ëŸ¬ê°œ ë“¤ì–´ì˜¬ ê²ƒì„ ëŒ€ë¹„í•´ value ëŠ” ë°°ì—´ë¡œ ë˜ì–´ìˆìŒ
+					String strValue = ((String[])value)[0];	// getParameterMap()ì—ì„œ êº¼ë‚¸ valueëŠ” Stringë°°ì—´ì´ë¯€ë¡œ ë³€í™˜ í•„ìš” 
 					argArr[i] = convertTo(strValue, paramType);				
 				} 
 			}
 			
-			// 3. ControllerÀÇ main()À» È£Ãâ - YoilTellerMVC.main(int year, int month, int day, Model model)
+			// 3. Controllerì˜ main()ì„ í˜¸ì¶œ - YoilTellerMVC.main(int year, int month, int day, Model model)
 			viewName = (String)main.invoke(obj, argArr); 	
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 		System.out.println("viewName : "+viewName);
-		// 4. ÅØ½ºÆ® ÆÄÀÏÀ» ÀÌ¿ëÇÑ rendering
+		System.out.println("model : "+model);		
+		
+		// 4. í…ìŠ¤íŠ¸ íŒŒì¼ì„ ì´ìš©í•œ rendering
 		render(model, viewName, response);			
 	} // main
 	
 	private Object convertTo(Object value, Class type) {
-		if(type==null || value==null || type.isInstance(value)) // Å¸ÀÔÀÌ °°À¸¸é ±×´ë·Î ¹İÈ¯ 
+		if(type==null || value==null || type.isInstance(value)) // íƒ€ì…ì´ ê°™ìœ¼ë©´ ê·¸ëŒ€ë¡œ ë°˜í™˜ 
 			return value;
 		
-		// Å¸ÀÔÀÌ ´Ù¸£¸é, º¯È¯ÇØ¼­ ¹İÈ¯
+		// íƒ€ì…ì´ ë‹¤ë¥´ë©´, ë³€í™˜í•´ì„œ ë°˜í™˜
 		if(String.class.isInstance(value) && type==int.class) { // String -> int
 			return Integer.valueOf((String)value);
 		} else if(String.class.isInstance(value) && type==double.class) { // String -> double
@@ -100,27 +102,27 @@ public class MyDispatcherServlet extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		PrintWriter out = response.getWriter();
 		
-		// 1. ºäÀÇ ³»¿ëÀ» ÇÑÁÙ¾¿ ÀĞ¾î¼­ ÇÏ³ªÀÇ ¹®ÀÚ¿­·Î ¸¸µç´Ù.
+		// 1. ë·°ì˜ ë‚´ìš©ì„ í•œì¤„ì”© ì½ì–´ì„œ í•˜ë‚˜ì˜ ë¬¸ìì—´ë¡œ ë§Œë“ ë‹¤.
 		Scanner sc = new Scanner(new File(getResolvedViewName(viewName)), "utf-8");
 		
 		while(sc.hasNextLine())
 			result += sc.nextLine()+ System.lineSeparator();
 		
-		// 2. modelÀ» mapÀ¸·Î º¯È¯ 
+		// 2. modelì„ mapìœ¼ë¡œ ë³€í™˜ 
 		Map map = model.asMap();
 		
-		// 3.key¸¦ ÇÏ³ª¾¿ ÀĞ¾î¼­ templateÀÇ ${key}¸¦ value¹Ù²Û´Ù.
+		// 3.keyë¥¼ í•˜ë‚˜ì”© ì½ì–´ì„œ templateì˜ ${key}ë¥¼ valueë°”ê¾¼ë‹¤.
 		Iterator it = map.keySet().iterator();
 		
 		while(it.hasNext()) {
 			String key = (String)it.next();
 
-			// 4. replace()·Î key¸¦ value Ä¡È¯ÇÑ´Ù.
+			// 4. replace()ë¡œ keyë¥¼ value ì¹˜í™˜í•œë‹¤.
 			result = result.replace("${myDate."+key+"}", map.get(key)+"");
 			result = result.replace("${"+key+"}", map.get(key)+"");
 		}
 		
-		// 5.·»´õ¸µ °á°ú¸¦ Ãâ·ÂÇÑ´Ù.
+		// 5.ë Œë”ë§ ê²°ê³¼ë¥¼ ì¶œë ¥í•œë‹¤.
 		System.out.println(result);
 		out.println(result);
 	}

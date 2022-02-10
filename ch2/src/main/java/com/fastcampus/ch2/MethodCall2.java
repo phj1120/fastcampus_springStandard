@@ -13,54 +13,51 @@ import org.springframework.validation.support.BindingAwareModelMap;
 public class MethodCall2 {
 	public static void main(String[] args) throws Exception{
 		
-//		1. YoilTellerMVCÀÇ °´Ã¼ »ı¼º
+//		1. YoilTellerMVCì˜ ê°ì²´ ìƒì„±
 		Class clazz = Class.forName("com.fastcampus.ch2.YoilTellerMVC");
 		Object obj = clazz.newInstance();
 		
-//		2. Main ¸Ş¼­µåÀÇ Á¤º¸ °¡Á®¿Â´Ù.
+//		2. Main ë©”ì„œë“œì˜ ì •ë³´ ê°€ì ¸ì˜¨ë‹¤.
 		Method main = clazz.getDeclaredMethod("main", int.class, int.class, int.class, Model.class);
 		
-//		3. Model À» »ı¼º
+//		3. Model ì„ ìƒì„±
 		Model model = new BindingAwareModelMap();
 		System.out.println("[before] model="+model);
 		
-//		4. main ¸Ş¼­µå¸¦ È£Ãâ
-//		¸®ÇÃ·º¼Ç API ¾È¾µ °æ¿ì ÀÌ·¸°Ô(MethodCall.java ¹æ½Ä)
-//		String viewName = obj.main(2021, 10, 1, model);
-//		¸®ÇÃ·º¼Ç API ¸¦ ÀÌ¿ëÇÑ È£Ãâ
+//		4. main ë©”ì„œë“œë¥¼ í˜¸ì¶œ - ë¦¬í”Œë ‰ì…˜ API ë¥¼ ì´ìš©í•œ í˜¸ì¶œ
 		String viewName = (String)main.invoke(obj, new Object[] { 2021, 10, 1, model }); 	
-		System.out.println("viewName="+viewName);	
+		System.out.println("viewName="+viewName);
 		
-		// ModelÀÇ ³»¿ëÀ» Ãâ·Â 
+		// Modelì˜ ë‚´ìš©ì„ ì¶œë ¥ 
 		System.out.println("[after] model="+model);
 				
-		// ÅØ½ºÆ® ÆÄÀÏÀ» ÀÌ¿ëÇÑ rendering
+		// í…ìŠ¤íŠ¸ íŒŒì¼ì„ ì´ìš©í•œ rendering
 		render(model, viewName);			
-	} // main
+	}
 	
 	static void render(Model model, String viewName) throws IOException {
 		String result = "";
 		
-		// 1. ºäÀÇ ³»¿ëÀ» ÇÑÁÙ¾¿ ÀĞ¾î¼­ ÇÏ³ªÀÇ ¹®ÀÚ¿­·Î ¸¸µç´Ù.
+		// 1. ë·°ì˜ ë‚´ìš©ì„ í•œì¤„ì”© ì½ì–´ì„œ í•˜ë‚˜ì˜ ë¬¸ìì—´ë¡œ ë§Œë“ ë‹¤.
 		Scanner sc = new Scanner(new File("src/main/webapp/WEB-INF/views/"+viewName+".jsp"), "utf-8");
 		
 		while(sc.hasNextLine())
 			result += sc.nextLine()+ System.lineSeparator();
 		
-		// 2. modelÀ» mapÀ¸·Î º¯È¯ 
+		// 2. modelì„ mapìœ¼ë¡œ ë³€í™˜ 
 		Map map = model.asMap();
 		
-		// 3.key¸¦ ÇÏ³ª¾¿ ÀĞ¾î¼­ templateÀÇ ${key}¸¦ value¹Ù²Û´Ù.
+		// 3.keyë¥¼ í•˜ë‚˜ì”© ì½ì–´ì„œ templateì˜ ${key}ë¥¼ valueë°”ê¾¼ë‹¤.
 		Iterator it = map.keySet().iterator();
 		
 		while(it.hasNext()) {
 			String key = (String)it.next();
 
-			// 4. replace()·Î key¸¦ value Ä¡È¯ÇÑ´Ù.
+			// 4. replace()ë¡œ keyë¥¼ value ì¹˜í™˜í•œë‹¤.
 			result = result.replace("${"+key+"}", ""+map.get(key));
 		}
 		
-		// 5.·»´õ¸µ °á°ú¸¦ Ãâ·ÂÇÑ´Ù.
+		// 5.ë Œë”ë§ ê²°ê³¼ë¥¼ ì¶œë ¥í•œë‹¤.
 		System.out.println(result);
 	}
 }
