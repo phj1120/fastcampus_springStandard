@@ -17,7 +17,7 @@ import javax.annotation.Resource;
 @Setter
 @ToString
 @AllArgsConstructor
-//@NoArgsConstructor // 기본 생성자 꼭 만들어 주자
+@NoArgsConstructor // 기본 생성자 꼭 만들어 주자
 @Component
 class Car {
     @Value("red") String color;
