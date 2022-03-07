@@ -4,9 +4,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -15,7 +15,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 // Spring Test 라이브러리 추가 후 사용 가능
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -30,6 +30,16 @@ public class DBConnectionTest2Test {
     @Autowired
     ApplicationContext ac;
 
+    @Test
+    public void contextLoads() throws Exception {
+        if (ac != null) {
+            String[] beans = ac.getBeanDefinitionNames();
+
+            for (String bean : beans) {
+                System.out.println("bean : " + bean);
+            }
+        }
+    }
     @Test
     public void insertUserTest() throws SQLException {
         User user = new User("abcd", "1234", "abc", "aaa@aaa.com", new Date(), "fb", new Date());
