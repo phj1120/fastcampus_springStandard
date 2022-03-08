@@ -1,9 +1,11 @@
 package com.fastcampus.ch3;
 
+import lombok.extern.log4j.Log4j;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
+@Log4j
 public class UserValidator implements Validator {
 	@Override
 	public boolean supports(Class<?> clazz) {
@@ -18,10 +20,11 @@ public class UserValidator implements Validator {
 		User user = (User)target;
 		
 		String id = user.getId();
-		
+		log.info("[errors] : "+errors);
 //		if(id==null || "".equals(id.trim())) {
 //			errors.rejectValue("id", "required");
 //		}
+
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "id",  "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "pwd", "required");
 		
