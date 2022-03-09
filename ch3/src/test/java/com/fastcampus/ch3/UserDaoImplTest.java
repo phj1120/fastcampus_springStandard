@@ -44,7 +44,7 @@ public class UserDaoImplTest {
 //        user.setBirth(new Date(rs.getDate(5).getTime()));
         Calendar cal = Calendar.getInstance();
         cal.clear();
-        cal.set(1998, 11, 20);
+        cal.set(1998, Calendar.NOVEMBER, 20);
 
         userDao.deleteAll();
         User user = new User("abcd", "1234", "abc", "aaa@aaa.com", new Date(cal.getTimeInMillis()), "fb", new Date());
