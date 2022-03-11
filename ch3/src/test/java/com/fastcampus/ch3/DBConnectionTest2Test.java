@@ -1,5 +1,6 @@
 package com.fastcampus.ch3;
 
+import lombok.extern.log4j.Log4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ import java.util.Date;
 
 import static org.junit.Assert.assertTrue;
 
+@Log4j
 // Spring Test 라이브러리 추가 후 사용 가능
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/spring/**/root-context.xml"})
@@ -29,6 +31,43 @@ public class DBConnectionTest2Test {
 
     @Autowired
     ApplicationContext ac;
+
+    @Test
+    public void transactionTest() throws SQLException {
+        Connection conn = null;
+        try {
+            deleteAll();
+            conn = ds.getConnection();
+            conn.setAutoCommit(false); // AutoCommit true 가 기본
+            String sql = "insert into user_info " +
+                    "values (?, ?, ?, ?, ?, ?, now())";
+
+            PreparedStatement pstmt = conn.prepareStatement(sql); // SQL Injection 공격, 성능 향상(재실행으로 캐싱 효과)
+            pstmt.setString(1, "asdf");
+            pstmt.setString(2, "1234");
+            pstmt.setString(3, "abc");
+            pstmt.setString(4, "aaa@aaa.com");
+            pstmt.setDate(5, new java.sql.Date(new Date().getTime()));
+            pstmt.setString(6, "fb");
+
+            int rowCnt = pstmt.executeUpdate(); // insert, delete, update 에 사용
+
+            pstmt.setString(1, "asdf2");
+
+            rowCnt = pstmt.executeUpdate();
+
+            conn.commit();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            conn.rollback();
+        }finally {
+            conn.close();
+        }
+    }
+
+
+
 
     @Test
     public void contextLoads() throws Exception {
