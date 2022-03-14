@@ -2,8 +2,6 @@ package com.fastcampus.ch3.aop;
 
 import org.springframework.context.support.GenericXmlApplicationContext;
 
-
-
 public class AopMain2 {
 
     public static void main(String[] args) {
@@ -11,6 +9,6 @@ public class AopMain2 {
         MyMath mm = (MyMath)ac.getBean("myMath");
         mm.add(1, 2);
         mm.add(1, 2, 3);
-        mm.multiply(3, 5);
+        System.out.println(mm.multiply(3, 5));
     }
 }
