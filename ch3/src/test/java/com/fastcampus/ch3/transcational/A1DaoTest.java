@@ -22,8 +22,11 @@ public class A1DaoTest {
     @Autowired
     DataSource ds;
 
+    @Autowired
+    DataSourceTransactionManager tm;
+
     @Test
-    public void insertTest() throws Exception {
+    public void insertTestSuccess() throws Exception {
 //        TxManager 생성
         DataSourceTransactionManager tm = new DataSourceTransactionManager(ds);
         TransactionStatus status = tm.getTransaction(new DefaultTransactionDefinition());
@@ -37,6 +40,26 @@ public class A1DaoTest {
             e.printStackTrace();
             tm.rollback(status);
         }
+    }
+
+    @Test
+    public void insertTestFail() throws Exception {
+//        TxManager bean 에 등록후 자동 주입
+        TransactionStatus status = tm.getTransaction(new DefaultTransactionDefinition());
+        try {
+            a1Dao.deleteAll();
+            a1Dao.insert(1, 100);
+            a1Dao.insert(1, 100);
+            tm.commit(status);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            tm.rollback(status);
+        }
+    }
+
+    @Test
+    public void deleteAllTest() throws Exception{
+        a1Dao.deleteAll();
     }
 
 }
