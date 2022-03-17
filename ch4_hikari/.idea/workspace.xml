@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="ch4:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="627af3d1-6c8f-42d0-b596-98d18f09847d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../ch2/target/m2e-wtp/web-resources/META-INF/maven/com.fastcampus/ch2/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ch2/target/m2e-wtp/web-resources/META-INF/maven/com.fastcampus/ch2/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch3_prac/target/classes/com/fastcampus/ch3/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ch3_prac/target/classes/com/fastcampus/ch3/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch3_prac/target/classes/com/fastcampus/ch3/db/Dao/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch3_prac/target/classes/com/fastcampus/ch3/db/Dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch3_prac/target/classes/com/fastcampus/ch3/db/Dao/UserDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch3_prac/target/classes/com/fastcampus/ch3/db/SpringJdbcConnectTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch3_prac/target/classes/com/fastcampus/ch3/db/jdbcConnectTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch3_prac/target/m2e-wtp/web-resources/META-INF/maven/com.fastcampus/ch3/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ch3_prac/target/m2e-wtp/web-resources/META-INF/maven/com.fastcampus/ch3/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch3_prac/target/m2e-wtp/web-resources/META-INF/maven/com.fastcampus/ch3/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch3_prac/target/m2e-wtp/web-resources/META-INF/maven/com.fastcampus/ch3/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch3_prac/target/test-classes/com/fastcampus/ch3/db/Dao/UserDaoImplTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../firstProject/target/m2e-wtp/web-resources/META-INF/maven/com.fastcampus/app/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../firstProject/target/m2e-wtp/web-resources/META-INF/maven/com.fastcampus/app/pom.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="JUnit4 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectId" id="26Unxjx5bo9aiIg2pi9MYTH11kn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="shared-indexes" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Develop\git\2022_fastcampus_springStandard\ch4_hikari\src\main\resources" />
+      <recent name="C:\Develop\git\2022_fastcampus_springStandard\ch4\src\main\java\com\fastcampus\ch4\domain" />
+      <recent name="C:\Develop\git\2022_fastcampus_springStandard\ch4\src\main\webapp\WEB-INF\views" />
+      <recent name="C:\Develop\git\2022_fastcampus_springStandard\ch4\src\main\java\com\fastcampus\ch4" />
+      <recent name="C:\Develop\git\2022_fastcampus_springStandard\ch4\src\main\resources\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Develop\git\2022_fastcampus_springStandard\ch4_hikari\src\main\resources\com\fastcampus\ch4" />
+      <recent name="C:\Develop\git\2022_fastcampus_springStandard\ch4\src\main\resources" />
+      <recent name="C:\Develop\git\2022_fastcampus_springStandard\ch4\src\main\resources\com\fastcampus\ch4" />
+      <recent name="C:\Develop\git\2022_fastcampus_springStandard\ch4\src\main\resources\mapper" />
+      <recent name="C:\Develop\git\2022_fastcampus_springStandard\ch4\src\main\webapp\WEB-INF\spring" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.fastcampus.ch4.dao" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.fastcampus.ch4" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.fastcampus.ch4.dao" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.fastcampus.ch4.dao" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.BoardDaoTest (1)">
+    <configuration name="BoardDaoTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ch4_hikari" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fastcampus.ch4.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fastcampus.ch4.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.fastcampus.ch4.dao.BoardDaoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoardDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ch4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fastcampus.ch4.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fastcampus.ch4.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.fastcampus.ch4.dao.BoardDaoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoardDaoTest.select" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ch4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fastcampus.ch4.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fastcampus.ch4.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.fastcampus.ch4.dao.BoardDaoTest" />
+      <option name="METHOD_NAME" value="select" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoardDaoTest.totalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ch4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fastcampus.ch4.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fastcampus.ch4.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.fastcampus.ch4.dao.BoardDaoTest" />
+      <option name="METHOD_NAME" value="totalTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.54" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.54" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:80/ch4/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="ch4:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/ch4" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="d14b0274-0e3b-4cc2-94a9-3b8fc2f09624" />
+        <option name="HTTP_PORT" value="80" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="9176" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="ch4:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.BoardDaoTest.select" />
+      <item itemvalue="JUnit.BoardDaoTest" />
+      <item itemvalue="JUnit.BoardDaoTest.totalTest" />
+      <item itemvalue="JUnit.BoardDaoTest (1)" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.54" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.BoardDaoTest (1)" />
+        <item itemvalue="JUnit.BoardDaoTest.totalTest" />
+        <item itemvalue="JUnit.BoardDaoTest.select" />
+        <item itemvalue="JUnit.BoardDaoTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="627af3d1-6c8f-42d0-b596-98d18f09847d" name="Changes" comment="" />
+      <created>1647487283238</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1647487283238</updated>
+      <workItem from="1647487285164" duration="984000" />
+      <workItem from="1647488291400" duration="12180000" />
+      <workItem from="1647505827338" duration="2258000" />
+      <workItem from="1647522207670" duration="56000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
