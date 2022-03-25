@@ -5,18 +5,6 @@
 <!-- mapper 인터페이스 위치랑 맞아야함 -->
 <mapper namespace="com.fastcampus.ch4.mapper.BoardMapper">
 
-    <select id="count" resultType="int">
-        SELECT count(*) FROM board
-    </select>
-
-    <delete id="deleteAll">
-        DELETE FROM board
-    </delete>
-
-    <delete id="delete" parameterType="map">
-        DELETE FROM board WHERE bno = #{bno} and writer = #{writer}
-    </delete>
-
     <insert id="insert" parameterType="BoardDto">
         INSERT INTO board
             (title, content, writer)
@@ -24,17 +12,17 @@
             (#{title}, #{content}, #{writer})
     </insert>
 
+    <select id="select" parameterType="int" resultType="BoardDto">
+        SELECT bno, title, content, writer
+             , view_cnt, comment_cnt, reg_date
+        FROM board
+        WHERE bno = #{bno}
+    </select>
+
     <select id="selectAll" resultType="BoardDto">
         SELECT bno, title, content, writer, view_cnt, comment_cnt, reg_date
         FROM board
         ORDER BY reg_date DESC, bno DESC
-    </select>
-
-    <select id="select" parameterType="int" resultType="BoardDto">
-            SELECT bno, title, content, writer
-                 , view_cnt, comment_cnt, reg_date
-            FROM board
-            WHERE bno = #{bno}
     </select>
 
     <select id="selectPage" parameterType="map" resultType="BoardDto">
@@ -43,7 +31,11 @@
         ORDER BY reg_date DESC, bno DESC
         LIMIT #{from}, #{size}
     </select>
-    
+
+    <select id="count" resultType="int">
+        SELECT count(*) FROM board
+    </select>
+
     <update id="update" parameterType="BoardDto">
         UPDATE board
         SET   title = #{title}
@@ -57,4 +49,13 @@
         SET   view_cnt = view_cnt + 1
         WHERE bno = #{bno}
     </update>
+
+    <delete id="deleteAll">
+        DELETE FROM board
+    </delete>
+
+    <delete id="delete" parameterType="map">
+        DELETE FROM board WHERE bno = #{bno} and writer = #{writer}
+    </delete>
+
 </mapper>

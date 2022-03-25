@@ -4,6 +4,7 @@
 		"http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
+		<!--alias 는 대소문자 구분X-->
 		<typeAlias alias="BoardDto" type="com.fastcampus.ch4.domain.BoardDto"/>
 	</typeAliases>
 </configuration>

@@ -7,12 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ch2" />
+        <module name="ch2_final" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ch2" options="-Xlint:all" />
+      <module name="ch2_final" options="-Xlint:all" />
     </option>
   </component>
 </project>

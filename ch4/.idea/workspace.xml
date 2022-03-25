@@ -10,7 +10,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="627af3d1-6c8f-42d0-b596-98d18f09847d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fastcampus/ch4/controller/BoardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/fastcampus/ch4/bean/ApplicationContextTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/com/fastcampus/ch4/controller/BoardController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/com/fastcampus/ch4/dao/BoardDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/com/fastcampus/ch4/dao/BoardDaoImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/com/fastcampus/ch4/domain/BoardDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/com/fastcampus/ch4/domain/PageHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/fastcampus/ch4/controller/BoardController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/fastcampus/ch4/dao/BoardDaoImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/fastcampus/ch4/bean/ApplicationContextTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch2_final/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch2_final/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch2_final/src/main/webapp/WEB-INF/spring/root-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch2_final/src/main/webapp/WEB-INF/spring/root-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch2_final/target/ch2-1.0.0-BUILD-SNAPSHOT/WEB-INF/spring/appServlet/servlet-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch2_final/target/ch2-1.0.0-BUILD-SNAPSHOT/WEB-INF/spring/appServlet/servlet-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch2_final/target/ch2-1.0.0-BUILD-SNAPSHOT/WEB-INF/spring/root-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch2_final/target/ch2-1.0.0-BUILD-SNAPSHOT/WEB-INF/spring/root-context.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fastcampus/ch4/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fastcampus/ch4/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fastcampus/ch4/dao/BoardDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fastcampus/ch4/dao/BoardDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fastcampus/ch4/dao/BoardDataSourceDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fastcampus/ch4/dao/BoardSqlSessionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fastcampus/ch4/dao/BoardDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fastcampus/ch4/dao/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fastcampus/ch4/dao/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fastcampus/ch4/domain/PageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fastcampus/ch4/domain/PageHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fastcampus/ch4/mapper/BoardMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fastcampus/ch4/mapper/BoardMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/boardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/boardMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/root-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/root-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/fastcampus/ch4/dao/BoardDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fastcampus/ch4/dao/BoardDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/com/fastcampus/ch4/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/com/fastcampus/ch4/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/com/fastcampus/ch4/dao/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/com/fastcampus/ch4/dao/UserDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/com/fastcampus/ch4/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/com/fastcampus/ch4/domain/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/mapper/boardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/mapper/boardMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/spring/appServlet/servlet-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/spring/appServlet/servlet-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/spring/root-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/spring/root-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fastcampus/ch4/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fastcampus/ch4/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fastcampus/ch4/dao/BoardDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fastcampus/ch4/dao/BoardDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fastcampus/ch4/dao/BoardDataSourceDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fastcampus/ch4/dao/BoardSqlSessionDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fastcampus/ch4/dao/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fastcampus/ch4/dao/UserDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fastcampus/ch4/domain/PageHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fastcampus/ch4/domain/PageHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fastcampus/ch4/mapper/BoardMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/boardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/boardMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/fastcampus/ch4/dao/BoardDaoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/fastcampus/ch4/dao/BoardDaoTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +63,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -41,7 +83,9 @@
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
@@ -50,17 +94,18 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ch2" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="shared-indexes" />
+    <property name="settings.editor.selected.configurable" value="project.scopes" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Develop\git\2022_fastcampus_springStandard\ch4\src\main\webapp\WEB-INF\views" />
       <recent name="C:\Develop\git\2022_fastcampus_springStandard\ch4\src\main\resources" />
       <recent name="C:\Develop\git\2022_fastcampus_springStandard\ch4\src\main\java\com\fastcampus\ch4\domain" />
-      <recent name="C:\Develop\git\2022_fastcampus_springStandard\ch4\src\main\webapp\WEB-INF\views" />
       <recent name="C:\Develop\git\2022_fastcampus_springStandard\ch4\src\main\java\com\fastcampus\ch4" />
       <recent name="C:\Develop\git\2022_fastcampus_springStandard\ch4\src\main\resources\css" />
     </key>
@@ -81,14 +126,45 @@
       <recent name="com.fastcampus.ch4" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="com.fastcampus.ch4.domain" />
       <recent name="com.fastcampus.ch4.dao" />
+      <recent name="com.fastcampus.ch4.domain" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.fastcampus.ch4.dao" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PageHandlerTest.valueTest">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.54">
+    <configuration name="ApplicationContextTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ch4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fastcampus.ch4.bean.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fastcampus.ch4.bean" />
+      <option name="MAIN_CLASS_NAME" value="com.fastcampus.ch4.bean.ApplicationContextTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplicationContextTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ch4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fastcampus.ch4.bean.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fastcampus.ch4.bean" />
+      <option name="MAIN_CLASS_NAME" value="com.fastcampus.ch4.bean.ApplicationContextTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BoardDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ch4" />
       <extension name="coverage">
@@ -104,7 +180,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardDaoTest.select" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BoardDaoTest.deleteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ch4" />
       <extension name="coverage">
         <pattern>
@@ -114,13 +190,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.fastcampus.ch4.dao" />
       <option name="MAIN_CLASS_NAME" value="com.fastcampus.ch4.dao.BoardDaoTest" />
-      <option name="METHOD_NAME" value="select" />
+      <option name="METHOD_NAME" value="deleteTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardDaoTest.totalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BoardDaoTest.increaseViewCnt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ch4" />
       <extension name="coverage">
         <pattern>
@@ -130,23 +206,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.fastcampus.ch4.dao" />
       <option name="MAIN_CLASS_NAME" value="com.fastcampus.ch4.dao.BoardDaoTest" />
-      <option name="METHOD_NAME" value="totalTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PageHandlerTest.valueTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ch4" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fastcampus.ch4.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.fastcampus.ch4.domain" />
-      <option name="MAIN_CLASS_NAME" value="com.fastcampus.ch4.domain.PageHandlerTest" />
-      <option name="METHOD_NAME" value="valueTest" />
+      <option name="METHOD_NAME" value="increaseViewCnt" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -242,18 +302,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.BoardDaoTest.select" />
+      <item itemvalue="JUnit.BoardDaoTest.increaseViewCnt" />
+      <item itemvalue="JUnit.BoardDaoTest.deleteTest" />
       <item itemvalue="JUnit.BoardDaoTest" />
-      <item itemvalue="JUnit.BoardDaoTest.totalTest" />
+      <item itemvalue="JUnit.ApplicationContextTests" />
+      <item itemvalue="JUnit.ApplicationContextTests.contextLoads" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.54" />
-      <item itemvalue="JUnit.PageHandlerTest.valueTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PageHandlerTest.valueTest" />
+        <item itemvalue="JUnit.ApplicationContextTests" />
+        <item itemvalue="JUnit.ApplicationContextTests.contextLoads" />
         <item itemvalue="JUnit.BoardDaoTest" />
-        <item itemvalue="JUnit.BoardDaoTest.totalTest" />
-        <item itemvalue="JUnit.BoardDaoTest.select" />
+        <item itemvalue="JUnit.BoardDaoTest.deleteTest" />
+        <item itemvalue="JUnit.BoardDaoTest.increaseViewCnt" />
       </list>
     </recent_temporary>
   </component>
@@ -269,6 +331,10 @@
       <workItem from="1647488291400" duration="20821000" />
       <workItem from="1647581236834" duration="1593000" />
       <workItem from="1647938368986" duration="3281000" />
+      <workItem from="1648005284260" duration="76000" />
+      <workItem from="1648186527304" duration="678000" />
+      <workItem from="1648187257309" duration="16247000" />
+      <workItem from="1648209789977" duration="824000" />
     </task>
     <servers />
   </component>

@@ -1,18 +1,20 @@
 package com.fastcampus.ch4.domain;
 
+import lombok.Data;
 import lombok.ToString;
 
 @ToString
+@Data
 public class PageHandler {
-    int totalCount;
-    int pageSize;
-    int naviSize = 10;
-    int totalPage;
-    int page;
-    int beginPage;
-    int endPage;
-    boolean showPrev;
-    boolean showNext;
+    private int totalCount;
+    private int pageSize;
+    private int naviSize = 10;
+    private int totalPage;
+    private int page;
+    private int beginPage;
+    private int endPage;
+    private boolean showPrev;
+    private boolean showNext;
 
     public PageHandler(int totalCount, int page) {
         this(totalCount, page, 10);
@@ -24,7 +26,7 @@ public class PageHandler {
         this.pageSize = pageSize;
         this.totalPage = (int) Math.ceil(totalCount / (double) pageSize);
 
-        this.beginPage = (page / naviSize) * naviSize + 1;
+        this.beginPage = ((page - 1) / naviSize) * naviSize + 1;
         this.endPage = Math.min(beginPage + naviSize - 1, totalPage);
         this.showPrev = page != 1;
         this.showNext = page != totalPage;

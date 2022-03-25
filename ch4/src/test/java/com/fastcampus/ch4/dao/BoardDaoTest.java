@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.HashMap;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -19,14 +22,108 @@ public class BoardDaoTest {
     BoardDao boardDao;
 
     @Test
-    public void totalTest() throws Exception {
-        assertTrue(boardDao != null);
+    public void makeTestData(){
+        boardDao.deleteAll();
+        assertTrue(boardDao.count() == 0);
 
-        BoardDto board = new BoardDto("제목", "글", "hj");
-        assertTrue(boardDao.insert(board) != 0);
+        for (int i = 1; i <= 220; i++) {
+            BoardDto boardDto = new BoardDto("title " + i, "content", "writer");
+            boardDao.insert(boardDto);
+        }
+        assertTrue(boardDao.count() == 220);
+    }
 
-//        이건..... no 가져오는거 한 다음에 해야 제대로된 테스트로 쓸 수 있을 듯
-        BoardDto board2 = boardDao.select(1);
-        assertTrue("hj".equals(board2.getWriter()));
+    @Test
+    public void countTest(){
+        boardDao.deleteAll();
+        assertTrue(boardDao.count() == 0);
+    }
+
+
+    @Test
+    public void insertTest(){
+        boardDao.deleteAll();
+        assertTrue(boardDao.count() == 0);
+
+        BoardDto boardDto = new BoardDto("title", "content", "writer");
+        int rows = boardDao.insert(boardDto);
+        assertTrue(rows == 1);
+    }
+
+    @Test
+    public void selectAllTest() throws Exception {
+        boardDao.deleteAll();
+        assertTrue(boardDao.count() == 0);
+
+        for (int i = 1; i <= 10; i++) {
+            BoardDto boardDto = new BoardDto("title " + i, "content", "writer");
+            boardDao.insert(boardDto);
+        }
+        List<BoardDto> boardList = boardDao.selectAll();
+        assertTrue(boardList.size() == 10);
+    }
+
+    @Test
+    public void selectPageTest() throws Exception {
+        boardDao.deleteAll();
+        assertTrue(boardDao.count() == 0);
+
+        for (int i = 1; i <= 23; i++) {
+            BoardDto boardDto = new BoardDto("title " + i, "content", "writer");
+            boardDao.insert(boardDto);
+        }
+        assertTrue(boardDao.count() == 23);
+
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("from", 10);
+        map.put("size", 10);
+        List<BoardDto> list = boardDao.selectPage(map);
+        assertTrue(list.size() == 10);
+    }
+
+    @Test
+    public void increaseViewCntTest() throws Exception {
+        boardDao.deleteAll();
+        assertTrue(boardDao.count()==0);
+
+        BoardDto boardDto = new BoardDto("title", "content", "asdf");
+        assertTrue(boardDao.insert(boardDto)==1);
+        assertTrue(boardDao.count()==1);
+
+        Integer bno = boardDao.selectAll().get(0).getBno();
+        assertTrue(boardDao.increaseViewCnt(bno)==1);
+
+        boardDto = boardDao.select(bno);
+        assertTrue(boardDto!=null);
+        assertTrue(boardDto.getView_cnt() == 1);
+
+        assertTrue(boardDao.increaseViewCnt(bno)==1);
+        boardDto = boardDao.select(bno);
+        assertTrue(boardDto!=null);
+        assertTrue(boardDto.getView_cnt() == 2);
+    }
+
+    @Test
+    public void deleteTest() throws Exception {
+        boardDao.deleteAll();
+        assertTrue(boardDao.count() == 0);
+
+        BoardDto boardDto = new BoardDto("title", "content", "asdf");
+        boardDao.insert(boardDto);
+        System.out.println(boardDao.count() == 1);
+        assertTrue(boardDao.count() == 1);
+
+        int bno = boardDao.selectAll().get(0).getBno();
+        HashMap<String, String> map = new HashMap<>();
+        map.put("bno", String.valueOf(bno));
+        map.put("writer", boardDto.getWriter());
+        boardDao.delete(map);
+        assertTrue(boardDao.count() == 0);
+    }
+
+    @Test
+    public void deleteAllTest() {
+        boardDao.deleteAll();
+        assertTrue(boardDao.count() == 0);
     }
 }

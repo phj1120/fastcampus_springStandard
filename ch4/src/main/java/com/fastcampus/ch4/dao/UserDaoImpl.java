@@ -40,9 +40,9 @@ public class UserDaoImpl implements UserDao {
         try (
             Connection conn = ds.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql);
-            ResultSet rs = pstmt.executeQuery(); //  select
         ){
             pstmt.setString(1, id);
+            ResultSet rs = pstmt.executeQuery(); //  select
 
             if (rs.next()) {
                 user = new User();

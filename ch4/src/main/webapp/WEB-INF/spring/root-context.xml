@@ -31,8 +31,13 @@
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<!-- servlet-context.xml 에도 있으니까 적용이 안 됐음 왜 그런지 찾아보기 -->
+	<mvc:annotation-driven/>
+	<context:component-scan base-package="com.fastcampus.ch4"/>
+
 	<!--  mapper 인터페이스 사용시 추가 위해 추가	-->
-<!--	<mybatis-spring:scan base-package="com.fastcampus.ch4.mapper"/>-->
+	<!--	<mybatis-spring:scan base-package="com.fastcampus.ch4.mapper"/>-->
 
 	<!-- MapperScannerConfigurer 사용 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
@@ -41,5 +46,4 @@
 	</bean>
 
 	<tx:annotation-driven/>
-	<context:component-scan base-package="com.fastcampus.ch4"/>
 </beans>
