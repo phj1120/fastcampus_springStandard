@@ -8,12 +8,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ch3" />
+        <module name="ch3_prac" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ch3" options="-Xlint:all" />
+      <module name="ch3_prac" options="-Xlint:all" />
     </option>
   </component>
 </project>

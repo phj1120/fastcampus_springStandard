@@ -47,9 +47,9 @@ public class TxServiceTest {
 
     @Test
     public void TxTest() throws Exception {
-//        a1Service.insertA1WithTx();
-//        b1Service.insertB1WithTx();
-//        txService.insertB1WithTx();
+        a1Service.insertA1WithTx();
+        b1Service.insertB1WithTx();
+        txService.insertB1WithTx();
         txService.insertA1WithTx();
     }
 

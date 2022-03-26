@@ -24,9 +24,26 @@
 	</ul>
 </div>
 <div style="text-align:center">
-	<h1>This is HOME</h1>
-	<h1>This is HOME</h1>
-	<h1>This is HOME</h1>
+	<table border='1'>
+	<c:forEach items="${boardList}" var="board">
+		<tr>
+			<td>${board.bno}</td>
+			<td>${board.title}</td>
+			<td>${board.content}</td>
+			<td>${board.writer}</td>
+			<td>${board.view_cnt}</td>
+		</tr>
+	</c:forEach>
+	</table>
+	<c:if test="${ph.showPrev}">
+		<a href="<c:url value="/board/list?page=${ph.beginPage}&totalCount=${ph.totalCount}"/>"><c:out value="<"/></a>
+	</c:if>
+	<c:forEach var="num" begin="${ph.beginPage}" end="${ph.endPage}" >
+		<a href="<c:url value="/board/list?page=${num}&totalCount=${ph.totalCount}"/>"><c:out value="${num}"/></a>
+	</c:forEach>
+	<c:if test="${ph.showNext}">
+		<a href="<c:url value="/board/list?page=${ph.endPage+1}&totalCount=${ph.totalCount}"/>"><c:out value=">"/></a>
+	</c:if>
 </div>
 </body>
 </html>

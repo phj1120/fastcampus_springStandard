@@ -10,17 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="627af3d1-6c8f-42d0-b596-98d18f09847d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../ch2/target/m2e-wtp/web-resources/META-INF/maven/com.fastcampus/ch2/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ch2/target/m2e-wtp/web-resources/META-INF/maven/com.fastcampus/ch2/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch3_prac/target/classes/com/fastcampus/ch3/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ch3_prac/target/classes/com/fastcampus/ch3/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch3_prac/target/classes/com/fastcampus/ch3/db/Dao/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch3_prac/target/classes/com/fastcampus/ch3/db/Dao/UserDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch3_prac/target/classes/com/fastcampus/ch3/db/Dao/UserDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch3_prac/target/classes/com/fastcampus/ch3/db/SpringJdbcConnectTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch3_prac/target/classes/com/fastcampus/ch3/db/jdbcConnectTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch3_prac/target/m2e-wtp/web-resources/META-INF/maven/com.fastcampus/ch3/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ch3_prac/target/m2e-wtp/web-resources/META-INF/maven/com.fastcampus/ch3/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch3_prac/target/m2e-wtp/web-resources/META-INF/maven/com.fastcampus/ch3/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch3_prac/target/m2e-wtp/web-resources/META-INF/maven/com.fastcampus/ch3/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch3_prac/target/test-classes/com/fastcampus/ch3/db/Dao/UserDaoImplTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../firstProject/target/m2e-wtp/web-resources/META-INF/maven/com.fastcampus/app/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../firstProject/target/m2e-wtp/web-resources/META-INF/maven/com.fastcampus/app/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch3/src/test/java/com/fastcampus/ch3/transcational/TxServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ch3/src/test/java/com/fastcampus/ch3/transcational/TxServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch3/target/test-classes/com/fastcampus/ch3/transcational/TxServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ch3/target/test-classes/com/fastcampus/ch3/transcational/TxServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch3_prac/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch3_prac/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/.idea/dataSources/a1983e21-26a2-4d19-bd81-411a79a5ec8d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/.idea/dataSources/a1983e21-26a2-4d19-bd81-411a79a5ec8d.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +63,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ch4" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -285,6 +280,8 @@
       <workItem from="1647488291400" duration="12180000" />
       <workItem from="1647505827338" duration="2258000" />
       <workItem from="1647522207670" duration="56000" />
+      <workItem from="1648275821937" duration="607000" />
+      <workItem from="1648296925079" duration="39000" />
     </task>
     <servers />
   </component>
