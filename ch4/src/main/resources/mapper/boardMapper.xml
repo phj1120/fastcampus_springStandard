@@ -29,7 +29,7 @@
         SELECT bno, title, content, writer, view_cnt, comment_cnt, reg_date
         FROM board
         ORDER BY reg_date DESC, bno DESC
-        LIMIT #{from}, #{size}
+        LIMIT #{offset}, #{pageSize}
     </select>
 
     <select id="count" resultType="int">

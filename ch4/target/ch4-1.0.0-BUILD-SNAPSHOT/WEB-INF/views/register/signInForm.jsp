@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false"%>
 <c:set var="loginId" value="${pageContext.request.getAttribute('id') ? '' : pageContext.request.session.getAttribute('id')}"/>
 <c:set var="loginOutLink" value="${empty loginId ? '/login/login' : '/login/logout'}"/>
 <c:set var="loginOut" value="${empty loginId ? 'Login' : 'Logout'}"/>
@@ -68,43 +69,61 @@
 		<li><a href=""><i class="fa fa-search"></i></a></li>
 	</ul>
 </div>
-<form action="<c:url value="/login/login"/>" method="post" onsubmit="return formCheck(this);">
+<%--<form action="<c:url value="/register/add"/>" method="post" onsubmit="return formCheck(this);">--%>
+<form action="<c:url value="/register/add"/>" method="post" onsubmit="return formCheck(this);">
 	<h3 id="title">Login</h3>
 	<div id="msg">
 		<c:if test="${not empty param.msg}">
-<%--			<i class="fa fa-exclamation-circle">${URLDecoder.decode(param.msg)}</i>--%>
-			<i class="fa fa-exclamation-circle">${param.msg}</i>
+			<i class="fa fa-exclamation-circle"> ${URLDecoder.decode(param.msg)}</i>
 		</c:if>
 	</div>
-	<input type="text" name="id" value="${cookie.id.value}" placeholder="이메일 입력" autofocus>
+	<input type="text" name="id" value="${cookie.id.value}" placeholder="아이디 입력" autofocus>
 	<input type="password" name="pwd" placeholder="비밀번호">
-	<input type="hidden" name="toURL" value="${param.toURL}">
-	<button>로그인</button>
+	<input type="password" name="pwdCheck" placeholder="비밀번호 확인">
+	<input type="text" name="name" placeholder="이름">
+	<input type="text" name="email" placeholder="이메일 입력">
+	<input type="text" name="birth" placeholder="2022-01-01">
 	<div>
-		<label><input type="checkbox" name="rememberId" value="on" ${empty cookie.id.value ? "":"checked"}> 아이디 기억</label> |
-		<a href="">비밀번호 찾기</a> |
-		<a href="">회원가입</a>
+		<span style="margin: 5px"><input type="checkbox" name="sns" value="kakao">카카오톡</span>
+		<span style="margin: 5px"><input type="checkbox" name="sns" value="fb">페이스북</span>
+		<span style="margin: 5px"><input type="checkbox" name="sns" value="insta">인스타</span>
 	</div>
-	<script>
-		function formCheck(frm) {
-			let msg ='';
-			if(frm.id.value.length==0) {
-				setMessage('id를 입력해주세요.');
-				return false;
-			}
-			if(frm.pwd.value.length==0) {
-				setMessage('password를 입력해주세요.');
-				return false;
-			}
-			return true;
-		}
-		function setMessage(msg){
-			// 두 번 감싸줘야함
-			<%--document.getElementById("msg").innerHTML = '${msg}';--%>
-			document.getElementById("msg").innerHTML = ` ${' ${msg}'}`;
-			document.getElementById("msg").className = 'fa fa-exclamation-circle';
-		}
-	</script>
+<%--	<input type="hidden" name="toURL" value="${param.toURL}">--%>
+	<button>회원가입</button>
 </form>
 </body>
 </html>
+
+<script>
+	function formCheck(frm) {
+		let msg ='';
+		if(frm.id.value.length < 4) {
+			setMessage('id는 4자 이상입니다.');
+			return false;
+		}
+		if (frm.pwd.value.length < 8) {
+			setMessage('password는 8자 이상입니다.');
+			return false;
+		}
+		if(frm.pwd.value != frm.pwdCheck.value){
+			setMessage('비밀번호가 일치 하지 않습니다.');
+			return false;
+		}
+		if(frm.name.value.length == 0) {
+			setMessage('이름을 입력해 주세요.');
+			return false;
+		}
+		if(frm.email.value.length == 0) {
+			setMessage('이메일을 입력해 주세요.');
+			return false;
+		}
+		if(frm.birth.value.length == 0) {
+			setMessage('생년월일을 입력해 주세요.');
+			return false;
+		}
+		return true;
+	}
+	function setMessage(msg){
+		document.getElementById("msg").innerHTML = ` ${'${msg}'}`;
+	}
+</script>
