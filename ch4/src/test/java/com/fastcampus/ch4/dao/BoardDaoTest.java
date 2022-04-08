@@ -2,6 +2,7 @@ package com.fastcampus.ch4.dao;
 
 import com.fastcampus.ch4.domain.BoardDto;
 import lombok.extern.log4j.Log4j;
+import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class BoardDaoTest {
     @Autowired
     BoardDao boardDao;
 
-    @Test
+    @After
     public void makeTestData(){
         boardDao.deleteAll();
         assertTrue(boardDao.count() == 0);
@@ -75,8 +76,8 @@ public class BoardDaoTest {
         assertTrue(boardDao.count() == 23);
 
         HashMap<String, Integer> map = new HashMap<>();
-        map.put("from", 10);
-        map.put("size", 10);
+        map.put("offset", 10);
+        map.put("pageSize", 10);
         List<BoardDto> list = boardDao.selectPage(map);
         assertTrue(list.size() == 10);
     }
@@ -94,6 +95,7 @@ public class BoardDaoTest {
         assertTrue(boardDao.increaseViewCnt(bno)==1);
 
         boardDto = boardDao.select(bno);
+        System.out.println("boardDto = " + boardDto);
         assertTrue(boardDto!=null);
         assertTrue(boardDto.getView_cnt() == 1);
 

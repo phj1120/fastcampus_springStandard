@@ -2,9 +2,11 @@ package com.fastcampus.ch4.dao;
 
 import com.fastcampus.ch4.domain.BoardDto;
 import org.apache.ibatis.session.SqlSession;
+import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -30,17 +32,21 @@ public class BoardDaoImpl implements BoardDao {
 
     @Override
     public BoardDto select(int bno) throws Exception{
-        return session.selectOne(namespace+"select", bno);
+        Map<String, Integer> map = new HashMap<>();
+        map.put("bno", bno);
+        BoardDto boardDto = session.selectOne(namespace + "select", map);
+        return boardDto;
+//        return session.selectOne(namespace+"select", bno);
     }
 
     @Override
     public List<BoardDto> selectAll() throws Exception {
-        return session.selectList(namespace + "selectAll");
+        return session.selectList(namespace + "select");
     }
 
     @Override
     public List<BoardDto> selectPage(Map<String, Integer> map) throws Exception {
-        return session.selectList(namespace + "selectPage", map);
+        return session.selectList(namespace + "select", map);
     }
 
     @Override
@@ -60,7 +66,7 @@ public class BoardDaoImpl implements BoardDao {
 
     @Override
     public int deleteAll() {
-        return session.delete(namespace + "deleteAll");
+        return session.delete(namespace + "delete");
     }
 
 }

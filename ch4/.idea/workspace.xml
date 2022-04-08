@@ -10,12 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="627af3d1-6c8f-42d0-b596-98d18f09847d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../ch3/config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../ch3/config.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch3/src/main/java/com/fastcampus/ch3/diCopy1/Main1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ch3/src/main/java/com/fastcampus/ch3/diCopy1/Main1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fastcampus/ch4/dao/BoardDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fastcampus/ch4/dao/BoardDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/boardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/boardMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/boardList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/boardList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/loginForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/loginForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register/signInForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register/signInForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/fastcampus/ch4/dao/BoardDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fastcampus/ch4/dao/BoardDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/com/fastcampus/ch4/dao/BoardDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/com/fastcampus/ch4/dao/BoardDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/mapper/boardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/mapper/boardMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fastcampus/ch4/dao/BoardDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fastcampus/ch4/dao/BoardDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/boardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/boardMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/fastcampus/ch4/dao/BoardDaoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/fastcampus/ch4/dao/BoardDaoTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +70,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ch3" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -105,22 +110,7 @@
       <recent name="com.fastcampus.ch4.dao" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.54">
-    <configuration name="ApplicationContextTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ch4" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fastcampus.ch4.bean.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.fastcampus.ch4.bean" />
-      <option name="MAIN_CLASS_NAME" value="com.fastcampus.ch4.bean.ApplicationContextTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.BoardDaoTest.increaseViewCntTest">
     <configuration name="BoardDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ch4" />
       <extension name="coverage">
@@ -132,6 +122,22 @@
       <option name="PACKAGE_NAME" value="com.fastcampus.ch4.dao" />
       <option name="MAIN_CLASS_NAME" value="com.fastcampus.ch4.dao.BoardDaoTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoardDaoTest.increaseViewCntTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ch4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fastcampus.ch4.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fastcampus.ch4.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.fastcampus.ch4.dao.BoardDaoTest" />
+      <option name="METHOD_NAME" value="increaseViewCntTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -152,6 +158,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BoardDaoTest.selectAllTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ch4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fastcampus.ch4.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fastcampus.ch4.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.fastcampus.ch4.dao.BoardDaoTest" />
+      <option name="METHOD_NAME" value="selectAllTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BoardDaoTest.selectPageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ch4" />
       <extension name="coverage">
@@ -163,22 +185,6 @@
       <option name="PACKAGE_NAME" value="com.fastcampus.ch4.dao" />
       <option name="MAIN_CLASS_NAME" value="com.fastcampus.ch4.dao.BoardDaoTest" />
       <option name="METHOD_NAME" value="selectPageTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PageHandlerTest.valueTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ch4" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fastcampus.ch4.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.fastcampus.ch4.domain" />
-      <option name="MAIN_CLASS_NAME" value="com.fastcampus.ch4.domain.PageHandlerTest" />
-      <option name="METHOD_NAME" value="valueTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -275,19 +281,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.BoardDaoTest" />
-      <item itemvalue="JUnit.ApplicationContextTests" />
-      <item itemvalue="JUnit.PageHandlerTest.valueTest" />
       <item itemvalue="JUnit.BoardDaoTest.selectPageTest" />
-      <item itemvalue="JUnit.BoardDaoTest.makeTestData" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.54" />
+      <item itemvalue="JUnit.BoardDaoTest.increaseViewCntTest" />
+      <item itemvalue="JUnit.BoardDaoTest.selectAllTest" />
+      <item itemvalue="JUnit.BoardDaoTest.makeTestData" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PageHandlerTest.valueTest" />
+        <item itemvalue="JUnit.BoardDaoTest.increaseViewCntTest" />
         <item itemvalue="JUnit.BoardDaoTest.makeTestData" />
-        <item itemvalue="JUnit.BoardDaoTest.selectPageTest" />
         <item itemvalue="JUnit.BoardDaoTest" />
-        <item itemvalue="JUnit.ApplicationContextTests" />
+        <item itemvalue="JUnit.BoardDaoTest.selectAllTest" />
+        <item itemvalue="JUnit.BoardDaoTest.selectPageTest" />
       </list>
     </recent_temporary>
   </component>
@@ -320,7 +326,7 @@
       <workItem from="1648638839175" duration="644000" />
       <workItem from="1649144111856" duration="14679000" />
       <workItem from="1649386974573" duration="835000" />
-      <workItem from="1649403737163" duration="2244000" />
+      <workItem from="1649403737163" duration="9932000" />
     </task>
     <servers />
   </component>
@@ -338,5 +344,12 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.fastcampus.ch4.dao.BoardDaoTest" memberName="boardDao" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

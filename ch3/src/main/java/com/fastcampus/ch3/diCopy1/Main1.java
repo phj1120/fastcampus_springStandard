@@ -9,6 +9,10 @@ class Truck extends Car{}
 
 class Engine {}
 
+// ch3/config.txt
+// car=com.fastcampus.ch3.diCopy1.Truck
+// engine=com.fastcampus.ch3.diCopy1.Engine
+
 public class Main1 {
     public static void main(String[] args) throws Exception {
 //        Car car = getCar();
