@@ -22,13 +22,13 @@ public class BoardDaoTest {
     @Autowired
     BoardDao boardDao;
 
-    @After
+    @Test
     public void makeTestData(){
         boardDao.deleteAll();
         assertTrue(boardDao.count() == 0);
 
         for (int i = 1; i <= 220; i++) {
-            BoardDto boardDto = new BoardDto("title " + i, "content", "writer");
+            BoardDto boardDto = new BoardDto("title " + i, "content", "asdf");
             boardDao.insert(boardDto);
         }
         assertTrue(boardDao.count() == 220);

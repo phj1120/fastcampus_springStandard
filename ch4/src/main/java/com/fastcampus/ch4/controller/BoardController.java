@@ -4,10 +4,13 @@ import com.fastcampus.ch4.domain.BoardDto;
 import com.fastcampus.ch4.domain.PageHandler;
 import com.fastcampus.ch4.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -53,6 +56,44 @@ public class BoardController {
         m.addAttribute("list", boardList);
         return "boardList";
     }
+
+    @RequestMapping(value = "read", method = RequestMethod.GET)
+    public String boardReadGet(HttpServletRequest request, Integer bno, Integer page, Integer pageSize, Model m) {
+        if (!loginCheck(request)) {
+            return "redirect:/login/login?toURL="+request.getRequestURL();
+        }
+
+        try {
+            BoardDto boardDto = boardService.read(bno);
+            m.addAttribute(boardDto); // m.addAttribute("boardDto", boardDto); 와 동일
+//            m.addAttribute(page); // 소문자일 경우 안 됨
+            m.addAttribute("page", page);
+            m.addAttribute("pageSize", pageSize);
+            System.out.println("[boardReadGet.boardDto] = " + boardDto);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "boardRead";
+    }
+
+    @RequestMapping(value = "remove", method = RequestMethod.POST)
+    public String boardRemovePost(Integer bno, Integer page, Integer pageSize, Model m, HttpServletRequest request, HttpSession session) {
+        if (!loginCheck(request)) {
+            return "redirect:/login/login?toURL="+request.getRequestURL();
+        }
+        try {
+//            HttpSession session = request.getSession(); or 매개변수로 HttpSession
+            String writer = (String) session.getAttribute("id");
+            boardService.remove(bno, writer);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        m.addAttribute("page", page);
+        m.addAttribute("pageSize", pageSize);
+        return "redirect:/board/list";
+//        return "redirect:/board/list?page"+page+"pageSize="+pageSize;
+    }
+
 
     private boolean loginCheck(HttpServletRequest request) {
         HttpSession session = request.getSession();

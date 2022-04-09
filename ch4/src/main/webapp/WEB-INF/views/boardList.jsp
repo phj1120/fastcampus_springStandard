@@ -73,7 +73,7 @@
 		<tr class = "rows">
 			<td>${board.bno}</td>
 			<td>${board.title}</td>
-			<td class="longCols">${board.content}</td>
+			<td class="longCols" ><a href="<c:url value='/board/read?bno=${board.bno}&page=${pageHandler.page}&pageSize=${pageHandler.pageSize}' />">${board.content}</a></td>
 			<td>${board.writer}</td>
 			<td>${board.view_cnt}</td>
 		</tr>

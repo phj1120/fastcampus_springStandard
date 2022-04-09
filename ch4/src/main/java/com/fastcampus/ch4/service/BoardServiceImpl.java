@@ -34,7 +34,7 @@ public class BoardServiceImpl implements BoardService {
 //      조회수 + 1
         BoardDto boardDto = boardDao.select(bno);
         boardDao.increaseViewCnt(bno);
-
+        System.out.println("[BoardServiceImpl.read.boardDto] = " + boardDto);
         return boardDto;
     }
 
