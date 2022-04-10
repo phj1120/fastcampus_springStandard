@@ -13,16 +13,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fastcampus/ch4/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fastcampus/ch4/controller/BoardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fastcampus/ch4/service/BoardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fastcampus/ch4/service/BoardServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/boardList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/boardList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/fastcampus/ch4/dao/BoardDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fastcampus/ch4/dao/BoardDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/com/fastcampus/ch4/controller/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/com/fastcampus/ch4/controller/BoardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/com/fastcampus/ch4/dao/BoardDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/com/fastcampus/ch4/dao/BoardDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/com/fastcampus/ch4/service/BoardServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/com/fastcampus/ch4/service/BoardServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/views/boardList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ch4-1.0.0-BUILD-SNAPSHOT/WEB-INF/views/boardList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fastcampus/ch4/controller/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fastcampus/ch4/controller/BoardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fastcampus/ch4/dao/BoardDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fastcampus/ch4/dao/BoardDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fastcampus/ch4/service/BoardServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fastcampus/ch4/service/BoardServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/fastcampus/ch4/dao/BoardDaoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/fastcampus/ch4/dao/BoardDaoTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/boardRead.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/boardRead.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -329,7 +320,10 @@
       <workItem from="1649144111856" duration="14679000" />
       <workItem from="1649386974573" duration="835000" />
       <workItem from="1649403737163" duration="9932000" />
-      <workItem from="1649501991050" duration="9162000" />
+      <workItem from="1649501991050" duration="9448000" />
+      <workItem from="1649565637003" duration="11000" />
+      <workItem from="1649574909009" duration="3000" />
+      <workItem from="1649592074794" duration="10039000" />
     </task>
     <servers />
   </component>

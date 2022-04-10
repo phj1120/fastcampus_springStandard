@@ -84,15 +84,14 @@
 	</ul>
 </div>
 <form action="" id="form">
-	<h1 id="title">게시물 읽기</h1>
-	<span class="rows">번호<input type="text"  class="rowsRead" name="bno" value="${boardDto.bno}" readonly="readonly"/></span>
-	<span class="rows">작성자<input type="text" class="rowsRead" name="writer" value="${boardDto.writer}" readonly="readonly"/></span>
-	<span class="rows">제목<input type="text" class="rowsModify" name="title" value="${boardDto.title}" readonly="readonly"/></span>
-	<textarea name="content" readonly="readonly">${boardDto.content}</textarea>
+	<h1 id="title">게시물 수정</h1>
+	<span class="rows">번호<input type="text"  class="rowsRead" name="bno" value="${boardDto.bno}" readonly="readonly"></span>
+	<span class="rows">작성자<input type="text" class="rowsRead" name="writer" readonly="readonly" value="${boardDto.writer}"/></span>
+	<span class="rows">제목<input type="text" class="rowsModify" name="title" value="${boardDto.title}"></span>
+	<textarea name="content">${boardDto.content}</textarea>
 	<span class="btn">
-		<button type="button" id="writeBtn" class="btn">새 글</button>
 		<button type="button" id="removeBtn" class="btn">삭제</button>
-		<button type="button" id="modifyBtn" class="btn">수정</button>
+		<button type="button" id="modifyBtn" class="btn">완료</button>
 		<button type="button" id="listBtn" class="btn">목록</button>
 	</span>
 </form>
@@ -103,11 +102,11 @@
 			// alert("listBtn clicked")
 			location.href = "<c:url value='/board/list?page=${page}&pageSize=${pageSize}'/>";
 		})
-		$('#writeBtn').on("click", function (){
-			location.href = "<c:url value='/board/write?page=${page}&pageSize=${pageSize}'/>";
-		})
 		$('#modifyBtn').on("click", function (){
-			location.href = "<c:url value='/board/modify?bno=${boardDto.bno}&page=${page}&pageSize=${pageSize}'/>";
+			let form = $('#form')
+			form.attr("action", "<c:url value='/board/modify'/>?BoardDto=${boardDto}&page=${page}&pageSize=${pageSize}");
+			form.attr("method", "post");
+			form.submit();
 		})
 		$('#removeBtn').on("click", function (){
 			let form = $('#form')

@@ -36,8 +36,8 @@
 			width: 800px;
 			height: 300px;
 			margin: 10px 0 0 20px;
-			padding: 10px 10px 10px 10px;
 			resize: none;
+			padding: 10px 10px 10px 10px;
 			border : 1px solid rgb(89,117,196);
 		}
 		button {
@@ -84,15 +84,12 @@
 	</ul>
 </div>
 <form action="" id="form">
-	<h1 id="title">게시물 읽기</h1>
-	<span class="rows">번호<input type="text"  class="rowsRead" name="bno" value="${boardDto.bno}" readonly="readonly"/></span>
-	<span class="rows">작성자<input type="text" class="rowsRead" name="writer" value="${boardDto.writer}" readonly="readonly"/></span>
-	<span class="rows">제목<input type="text" class="rowsModify" name="title" value="${boardDto.title}" readonly="readonly"/></span>
-	<textarea name="content" readonly="readonly">${boardDto.content}</textarea>
+	<h1 id="title">게시물 쓰기</h1>
+	<span class="rows">작성자<input type="text" class="rowsRead" name="writer" readonly="readonly" value="${sessionScope.id}"/></span>
+	<span class="rows">제목<input type="text" class="rowsModify" name="title" value="${boardDto.title}"></span>
+	<textarea name="content">${boardDto.content}</textarea>
 	<span class="btn">
-		<button type="button" id="writeBtn" class="btn">새 글</button>
-		<button type="button" id="removeBtn" class="btn">삭제</button>
-		<button type="button" id="modifyBtn" class="btn">수정</button>
+		<button type="button" id="writeBtn" class="btn">작성</button>
 		<button type="button" id="listBtn" class="btn">목록</button>
 	</span>
 </form>
@@ -104,14 +101,8 @@
 			location.href = "<c:url value='/board/list?page=${page}&pageSize=${pageSize}'/>";
 		})
 		$('#writeBtn').on("click", function (){
-			location.href = "<c:url value='/board/write?page=${page}&pageSize=${pageSize}'/>";
-		})
-		$('#modifyBtn').on("click", function (){
-			location.href = "<c:url value='/board/modify?bno=${boardDto.bno}&page=${page}&pageSize=${pageSize}'/>";
-		})
-		$('#removeBtn').on("click", function (){
 			let form = $('#form')
-			form.attr("action", "<c:url value='/board/remove'/>?page=${page}&pageSize=${pageSize}");
+			form.attr("action", "<c:url value='/board/write'/>?page=${page}&pageSize=${pageSize}");
 			form.attr("method", "post");
 			form.submit();
 		})

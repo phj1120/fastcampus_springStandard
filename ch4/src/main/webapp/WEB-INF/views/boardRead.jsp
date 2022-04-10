@@ -15,25 +15,30 @@
 		* { box-sizing:border-box; }
 		a { text-decoration: none; }
 		form {
-			width:400px;
-			height:500px;
+			width:900px;
+			height:600px;
 			display : flex;
 			flex-direction: column;
-			align-items:center;
 			position : absolute;
 			top:50%;
 			left:50%;
 			transform: translate(-50%, -50%) ;
+			/*align-items:center;*/
 			border: 1px solid rgb(89,117,196);
 			border-radius: 10px;
 		}
-		input[type='text'], input[type='password'] {
-			width: 300px;
-			height: 40px;
-			border : 1px solid rgb(89,117,196);
-			border-radius:5px;
+		input[type='text']{
+			width: 500px;
+			height: 30px;
 			padding: 0 10px;
-			margin-bottom: 10px;
+		}
+		textarea[name='content'] {
+			width: 800px;
+			height: 300px;
+			margin: 10px 0 0 20px;
+			padding: 10px 10px 10px 10px;
+			resize: none;
+			border : 1px solid rgb(89,117,196);
 		}
 		button {
 			background-color: rgb(89,117,196);
@@ -46,31 +51,50 @@
 			margin : 20px 0 30px 0;
 		}
 		#title {
-			font-size: 50px;
-			margin: 40px 0 30px 0;
+			font-size: 30px;
+			float: left;
+			margin: 20px 20px 20px 20px;
+		}
+		span[class="rows"] {
+			margin: 5px 0 0 20px;
+			font-weight: bold;
+		}
+		.rowsRead{
+			margin: 5px 0 0 20px;
+			border: none;
+		}
+		.rowsModify{
+			margin: 5px 0 0 20px;
+			border : 1px solid rgb(89,117,196);
+			border-radius: 5px;
+		}
+		span[class="btn"] {
+			margin: 5px 0 0 20px;
 		}
 	</style>
 </head>
 <body>
 <div id="menu">
 	<ul>
-		<li id="logo">fastcampus</li>
+		<li id="logo">parkh</li>
 		<li><a href="<c:url value='/'/>">Home</a></li>
 		<li><a href="<c:url value='/board/list'/>">Board</a></li>
 		<li><a href="<c:url value='${loginOutLink}'/>">${loginOut}</a></li>
 		<li><a href=""><i class="fa fa-search"></i></a></li>
 	</ul>
-	<h2 id="title">게시물 읽기</h2>
-	<form action="" id="form">
-		<input type="text" name="bno" value="${boardDto.bno}" readonly="readonly">
-		<input type="text" name="title" value="${boardDto.title}" readonly="readonly">
-		<textarea name="content" readonly="readonly">${boardDto.content}</textarea>
-		<button type="button" id="writeBtn" class="btn">등록</button>
-		<button type="button" id="modifyBtn" class="btn">수정</button>
-		<button type="button" id="removeBtn" class="btn">삭제</button>
-		<button type="button" id="listBtn" class="btn">목록</button>
-	</form>
 </div>
+<form action="" id="form">
+	<h1 id="title">게시물 읽기</h1>
+	<span class="rows">번호<input type="text"  class="rowsRead" name="bno" value="${boardDto.bno}" readonly="readonly"/></span>
+	<span class="rows">작성자<input type="text" class="rowsRead" name="writer" value="${boardDto.writer}" readonly="readonly"/></span>
+	<span class="rows">제목<input type="text" class="rowsModify" name="title" value="${boardDto.title}" readonly="readonly"/></span>
+	<textarea name="content" readonly="readonly">${boardDto.content}</textarea>
+	<span class="btn">
+		<button type="button" id="writeBtn" class="btn">새 글</button>
+		<button type="button" id="removeBtn" class="btn">삭제</button>
+		<button type="button" id="modifyBtn" class="btn">수정</button>
+		<button type="button" id="listBtn" class="btn">목록</button>
+	</span>
 </form>
 </body>
 <script>
@@ -78,6 +102,12 @@
 		$('#listBtn').on("click", function (){
 			// alert("listBtn clicked")
 			location.href = "<c:url value='/board/list?page=${page}&pageSize=${pageSize}'/>";
+		})
+		$('#writeBtn').on("click", function (){
+			location.href = "<c:url value='/board/write?page=${page}&pageSize=${pageSize}'/>";
+		})
+		$('#modifyBtn').on("click", function (){
+			location.href = "<c:url value='/board/modify?bno=${boardDto.bno}&page=${page}&pageSize=${pageSize}'/>";
 		})
 		$('#removeBtn').on("click", function (){
 			let form = $('#form')

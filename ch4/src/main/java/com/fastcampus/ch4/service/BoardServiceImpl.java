@@ -18,7 +18,7 @@ public class BoardServiceImpl implements BoardService {
     BoardDao boardDao;
 
     @Override
-    public int getCount() throws Exception {
+    public int getCount(){
         return boardDao.count();
     }
 
@@ -31,10 +31,9 @@ public class BoardServiceImpl implements BoardService {
     //  Read
     @Override
     public BoardDto read(Integer bno) throws Exception {
-//      조회수 + 1
+        // 조회수 + 1
         BoardDto boardDto = boardDao.select(bno);
         boardDao.increaseViewCnt(bno);
-        System.out.println("[BoardServiceImpl.read.boardDto] = " + boardDto);
         return boardDto;
     }
 
@@ -45,7 +44,16 @@ public class BoardServiceImpl implements BoardService {
 
     @Override
     public List<BoardDto> getPage(Map<String, Integer> map) throws Exception {
-        return boardDao.selectPage(map);
+        // content 글자 수 제한
+        List<BoardDto> boardDtos = boardDao.selectPage(map);
+        for (BoardDto boardDto : boardDtos) {
+            String content = boardDto.getContent();
+            if (content.length()>=20){
+                content = content.substring(0, 20)+"...";
+            }
+            boardDto.setContent(content);
+        }
+        return boardDtos;
     }
 
     @Override

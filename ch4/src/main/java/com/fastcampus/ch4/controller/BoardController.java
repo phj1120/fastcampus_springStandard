@@ -4,8 +4,6 @@ import com.fastcampus.ch4.domain.BoardDto;
 import com.fastcampus.ch4.domain.PageHandler;
 import com.fastcampus.ch4.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +21,37 @@ public class BoardController {
 
     @Autowired
     BoardService boardService;
+
+    @RequestMapping(value = "write", method = RequestMethod.GET)
+    public String boardWriteGet(Integer page, Integer pageSize, Model m, HttpServletRequest request) {
+        if (!loginCheck(request)) {
+            return "redirect:/login/login?toURL="+request.getRequestURL(); // http://localhost/ch4/login/login 으로 이동
+        }
+        try {
+            m.addAttribute("page", page);
+            m.addAttribute("pageSize", pageSize);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "boardWrite";
+    }
+
+    @RequestMapping(value = "write", method = RequestMethod.POST)
+    public String boardWritePost(BoardDto boardDto, Integer page, Integer pageSize, Model m, HttpServletRequest request) {
+        if (!loginCheck(request)) {
+            return "redirect:/login/login?toURL" + request.getRequestURL();
+        }
+        try {
+            boardService.write(boardDto);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        m.addAttribute("page", page);
+        m.addAttribute("pageSize", pageSize);
+        return "redirect:/board/list";
+
+    }
+
 
     @GetMapping("list")
 //    int totalCount, int page -> cannot be translated into a null value 에러 발생
@@ -60,16 +89,14 @@ public class BoardController {
     @RequestMapping(value = "read", method = RequestMethod.GET)
     public String boardReadGet(HttpServletRequest request, Integer bno, Integer page, Integer pageSize, Model m) {
         if (!loginCheck(request)) {
-            return "redirect:/login/login?toURL="+request.getRequestURL();
+            return "redirect:/login/login?toURL="+request.getRequestURL(); // http://localhost/ch4/login/login 으로 이동
         }
-
         try {
             BoardDto boardDto = boardService.read(bno);
             m.addAttribute(boardDto); // m.addAttribute("boardDto", boardDto); 와 동일
 //            m.addAttribute(page); // 소문자일 경우 안 됨
             m.addAttribute("page", page);
             m.addAttribute("pageSize", pageSize);
-            System.out.println("[boardReadGet.boardDto] = " + boardDto);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -79,7 +106,7 @@ public class BoardController {
     @RequestMapping(value = "remove", method = RequestMethod.POST)
     public String boardRemovePost(Integer bno, Integer page, Integer pageSize, Model m, HttpServletRequest request, HttpSession session) {
         if (!loginCheck(request)) {
-            return "redirect:/login/login?toURL="+request.getRequestURL();
+            return "redirect:/login/login?toURL="+request.getRequestURL(); // http://localhost/ch4/login/login 으로 이동
         }
         try {
 //            HttpSession session = request.getSession(); or 매개변수로 HttpSession
@@ -94,7 +121,40 @@ public class BoardController {
 //        return "redirect:/board/list?page"+page+"pageSize="+pageSize;
     }
 
+    @RequestMapping(value = "modify", method = RequestMethod.GET)
+    public String boardModifyGet(Integer bno, Integer page, Integer pageSize, Model m, HttpServletRequest request) {
+        if (!loginCheck(request)) {
+            return "redirect:/login/login?toURL="+request.getRequestURL(); // http://localhost/ch4/login/login 으로 이동
+        }
+        try {
+            BoardDto boardDto = boardService.read(bno);
+            m.addAttribute("boardDto", boardDto);
+            m.addAttribute("page", page);
+            m.addAttribute("pageSize", pageSize);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "boardModify";
+    }
 
+    @RequestMapping(value = "modify", method = RequestMethod.POST)
+    public String boardModifyPost(BoardDto boardDto, Integer page, Integer pageSize, HttpServletRequest request, Model m) {
+        if (!loginCheck(request)) {
+            return "redirect:/login/login?toURL="+request.getRequestURL(); // http://localhost/ch4/login/login 으로 이동
+        }
+        try {
+            String writer = (String) request.getSession().getAttribute("id");
+            if (writer.equals(boardDto.getWriter())) {
+                boardService.modify(boardDto);
+            }
+            // Todo - 작성자와 현재 로그인 사용자가 다를 경우 안내 메시지
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        m.addAttribute("page", page);
+        m.addAttribute("pageSize", pageSize);
+        return "redirect:/board/list";
+    }
     private boolean loginCheck(HttpServletRequest request) {
         HttpSession session = request.getSession();
         return session.getAttribute("id") != null;
