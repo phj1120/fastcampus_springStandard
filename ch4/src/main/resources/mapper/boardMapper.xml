@@ -44,10 +44,13 @@
         WHERE bno = #{bno}
     </update>
 
+    <!--  매개변수 잘 못 주면 게시글 다 날라가서 분리   -->
+    <delete id="deleteAll">
+        DELETE FROM board
+    </delete>
+
     <delete id="delete">
         DELETE FROM board
-        <if test="bno != null and writer != null">
-            WHERE bno = #{bno} and writer = #{writer}
-        </if>
+        WHERE bno = #{bno} and writer = #{writer}
     </delete>
 </mapper>

@@ -66,7 +66,7 @@ public class BoardDaoImpl implements BoardDao {
 
     @Override
     public int deleteAll() {
-        return session.delete(namespace + "delete");
+        return session.delete(namespace + "deleteAll");
     }
 
 }
